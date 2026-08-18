@@ -4,91 +4,1787 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="चिखली नगर परिषद - स्वच्छता व्यवस्था सेवा">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>स्वच्छता व्यवस्था | चिखली नगर परिषद</title>
 
-    <!-- Google Font -->
+    <!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 
 <style>
 
-/* =========================================================
-   ORANGE GOVERNMENT THEME
-========================================================= */
-
-:root {
-    --orange: #f26b18;
-    --orange-dark: #d9570b;
-    --orange-deep: #b94300;
-    --orange-light: #fff1e7;
-    --orange-soft: #fff8f3;
-
-    --text: #3d2b22;
-    --muted: #75665e;
-
-    --border: #ead8cc;
-
-    --bg: #f8f5f2;
-    --white: #ffffff;
-
-    --success: #18794e;
-    --danger: #b42318;
-
-    --shadow: 0 6px 20px rgba(120, 55, 20, .09);
-
-    --radius: 12px;
-}
-
-
-/* =========================================================
+/* =====================================================
    RESET
-========================================================= */
+===================================================== */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: "Noto Sans Devanagari", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden;
+body{
+    font-family:"Mukta",sans-serif;
+    background:#fffaf5;
+    color:#3d3028;
 }
 
-a {
-    color: inherit;
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
 button,
 input,
 select,
-textarea {
-    font: inherit;
+textarea{
+    font-family:"Mukta",sans-serif;
 }
 
 
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page{
+    width:100%;
+    max-width:1140px;
+    margin:auto;
+    padding:20px 20px 45px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:300px;
+
+    padding:35px 40px;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d85f00 0%,
+            #ed790e 50%,
+            #ff9a28 100%
+        );
+
+    box-shadow:
+        0 14px 35px rgba(180,80,0,.20);
+
+    color:#fff;
+}
+
+
+/* decorative circle */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:330px;
+    height:330px;
+
+    right:-100px;
+    top:-150px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    left:-100px;
+    bottom:-100px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    min-height:230px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:35px;
+}
+
+
+/* =====================================================
+   HERO TEXT
+===================================================== */
+
+.hero-text{
+
+    flex:1;
+
+    max-width:650px;
+}
+
+
+/* =====================================================
+   TITLE + ARROW
+===================================================== */
+
+.hero-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin:0 0 10px;
+
+    font-size:34px;
+
+    line-height:1.2;
+
+    font-weight:800;
+}
+
+
+/* =====================================================
+   TOP LEFT BACK ARROW
+===================================================== */
+
+.hero-back-btn{
+
+    width:38px;
+    height:38px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    color:#e66a00;
+
+    border:1px solid rgba(255,255,255,.7);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.16);
+
+    font-size:16px;
+
+    transition:.25s ease;
+}
+
+.hero-back-btn:hover{
+
+    background:#fff5eb;
+
+    transform:translateX(-4px);
+}
+
+
+/* =====================================================
+   HERO DESCRIPTION
+===================================================== */
+
+.hero-text p{
+
+    max-width:600px;
+
+    margin:0;
+
+    font-size:16px;
+
+    line-height:1.65;
+
+    color:rgba(255,255,255,.94);
+}
+
+
+/* =====================================================
+   HERO POINTS
+===================================================== */
+
+.hero-points{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    margin-top:18px;
+}
+
+.hero-point{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:7px 13px;
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    background:rgba(255,255,255,.12);
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    backdrop-filter:blur(5px);
+
+    transition:.25s ease;
+}
+
+.hero-point:hover{
+
+    background:#fff;
+
+    color:#df6500;
+
+    transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.hero-visual{
+
+    position:relative;
+
+    width:270px;
+
+    height:220px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+/* main image circle */
+
+.hero-image{
+
+    width:175px;
+    height:175px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.14);
+
+    border:2px solid rgba(255,255,255,.35);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.15);
+
+    animation:heroFloat 3s ease-in-out infinite;
+}
+
+.hero-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+
+/* floating icons */
+
+.floating-icon{
+
+    position:absolute;
+
+    width:48px;
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:#fff;
+
+    color:#e66a00;
+
+    font-size:19px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.18);
+
+    transition:.25s ease;
+}
+
+.floating-icon:hover{
+
+    transform:scale(1.08) rotate(5deg);
+}
+
+.icon-one{
+
+    top:15px;
+
+    right:10px;
+
+    transform:rotate(7deg);
+}
+
+.icon-two{
+
+    bottom:12px;
+
+    left:18px;
+
+    transform:rotate(-7deg);
+}
+
+
+@keyframes heroFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-7px);
+    }
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.form-section{
+
+    margin-top:28px;
+
+    margin-bottom:28px;
+
+    padding:27px 30px 30px;
+
+    background:#fff;
+
+    border:1px solid #ecdccf;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 7px 22px rgba(90,45,10,.06);
+}
+
+
+/* form title */
+
+.form-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+    color:#603718;
+
+    font-size:23px;
+
+    font-weight:800;
+}
+
+.form-title i{
+
+    color:#e66a00;
+
+    font-size:25px;
+}
+
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:17px 25px;
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5px;
+}
+
+.form-group.full{
+
+    grid-column:1 / -1;
+}
+
+.form-group label{
+
+    color:#4f3c30;
+
+    font-size:14px;
+
+    font-weight:700;
+}
+
+.required{
+
+    color:#d82e21;
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.form-group input,
+.form-group textarea{
+
+    width:100%;
+
+    border:1.5px solid #e4d6cb;
+
+    border-radius:11px;
+
+    background:#fff;
+
+    color:#3f3027;
+
+    outline:none;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.25s ease;
+}
+
+.form-group input{
+
+    height:50px;
+
+    padding:0 15px;
+}
+
+.form-group textarea{
+
+    min-height:100px;
+
+    padding:12px 15px;
+
+    resize:vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder{
+
+    color:#aaa09a;
+
+    font-weight:500;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+
+    border-color:#e66a00;
+
+    box-shadow:
+        0 0 0 3px rgba(230,106,0,.10);
+}
+
+
+/* =====================================================
+   CUSTOM DROPDOWN
+===================================================== */
+
+.custom-dropdown{
+
+    position:relative;
+
+    width:100%;
+}
+
+.dropdown-selected{
+
+    width:100%;
+
+    height:50px;
+
+    padding:0 15px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border:1.5px solid #ead9cc;
+
+    border-radius:11px;
+
+    background:#fff;
+
+    color:#333;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+}
+
+.dropdown-selected:hover{
+
+    border-color:#e66a00;
+
+    background:#fffaf6;
+}
+
+.dropdown-arrow{
+
+    color:#ed7200;
+
+    font-size:13px;
+
+    transition:.25s ease;
+}
+
+.custom-dropdown.active .dropdown-arrow{
+
+    transform:rotate(180deg);
+}
+
+.custom-dropdown.active .dropdown-selected{
+
+    border-color:#e66a00;
+
+    box-shadow:
+        0 0 0 3px rgba(230,106,0,.10);
+}
+
+
+/* OPTIONS */
+
+.dropdown-options{
+
+    position:absolute;
+
+    top:calc(100% + 6px);
+
+    left:0;
+
+    width:100%;
+
+    max-height:240px;
+
+    overflow-y:auto;
+
+    background:#fff;
+
+    border:1px solid #f0d7c3;
+
+    border-radius:12px;
+
+    box-shadow:
+        0 12px 28px rgba(120,60,0,.15);
+
+    z-index:100;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(-5px);
+
+    transition:.2s ease;
+}
+
+.custom-dropdown.active .dropdown-options{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+}
+
+.dropdown-option{
+
+    padding:11px 15px;
+
+    color:#333;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.18s ease;
+}
+
+.dropdown-option:hover{
+
+    background:#fff1e5;
+
+    color:#e66a00;
+
+    padding-left:19px;
+}
+
+.dropdown-option.selected{
+
+    background:#f07800;
+
+    color:#fff;
+
+    font-weight:700;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.form-actions{
+
+    grid-column:1 / -1;
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:5px;
+}
+
+.btn-submit{
+
+    border:none;
+
+    padding:13px 30px;
+
+    border-radius:11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d85f00,
+            #f28b18
+        );
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    box-shadow:
+        0 7px 18px rgba(210,90,0,.18);
+
+    transition:.25s ease;
+}
+
+.btn-submit:hover{
+
+    transform:translateY(-2px);
+}
+
+.btn-reset{
+
+    border:1.5px solid #e0d4cb;
+
+    padding:13px 27px;
+
+    border-radius:11px;
+
+    background:#fff;
+
+    color:#76675d;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+}
+
+.btn-reset:hover{
+
+    background:#fff5eb;
+
+    border-color:#e5b78e;
+
+    color:#d85f00;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.section-heading{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:5px 0 15px;
+
+    color:#603718;
+
+    font-size:24px;
+
+    font-weight:800;
+}
+
+.section-heading::before{
+
+    content:"";
+
+    width:6px;
+
+    height:29px;
+
+    border-radius:10px;
+
+    background:#e66a00;
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.services{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:17px;
+
+    margin-bottom:28px;
+}
+
+
+/* =====================================================
+   SERVICE CARD
+===================================================== */
+
+.service-card{
+
+    overflow:hidden;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    border:2px solid transparent;
+
+    box-shadow:
+        0 6px 18px rgba(90,45,10,.06);
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.service-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 14px 30px rgba(190,76,0,.14);
+}
+
+.service-card.active{
+
+    border-color:#e56c00;
+
+    box-shadow:
+        0 0 0 4px rgba(230,108,0,.10),
+        0 14px 30px rgba(0,0,0,.15);
+}
+
+
+/* =====================================================
+   SERVICE IMAGE
+===================================================== */
+
+.service-image{
+
+    position:relative;
+
+    width:100%;
+
+    height:145px;
+
+    overflow:hidden;
+
+    background:#eee;
+}
+
+
+/* images */
+
+.service-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+
+/* dark overlay */
+
+.service-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.30),
+            transparent 65%
+        );
+
+    pointer-events:none;
+
+    z-index:3;
+}
+
+
+/* =====================================================
+   SLIDER
+===================================================== */
+
+.image-slider{
+
+    display:flex;
+
+    width:300%;
+
+    height:100%;
+
+    animation:serviceSlider 12s infinite;
+}
+
+.image-slider img{
+
+    flex:0 0 33.333333%;
+
+    width:33.333333%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+@keyframes serviceSlider{
+
+    0%,28%{
+        transform:translateX(0);
+    }
+
+    33%,61%{
+        transform:translateX(-33.333333%);
+    }
+
+    66%,94%{
+        transform:translateX(-66.666666%);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
+}
+
+
+/* =====================================================
+   SERVICE CONTENT
+===================================================== */
+
+.service-content{
+
+    padding:15px;
+}
+
+.service-content h3{
+
+    color:#603718;
+
+    font-size:20px;
+
+    line-height:1.3;
+
+    margin-bottom:4px;
+}
+
+.service-content p{
+
+    color:#756b64;
+
+    font-size:14px;
+
+    line-height:1.45;
+}
+
+
+/* =====================================================
+   IMPORTANT INFO
+===================================================== */
+
+.info-box{
+
+    margin-bottom:28px;
+
+    padding:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff5e9,
+            #fffaf5
+        );
+
+    border:1px solid #f0d3b5;
+
+    border-radius:22px;
+}
+
+.info-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:15px;
+
+    color:#c95a00;
+
+    font-size:21px;
+
+    font-weight:800;
+}
+
+.info-title i{
+
+    color:#e39b20;
+}
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:10px;
+}
+
+.info-item{
+
+    padding:11px 14px;
+
+    background:#fff;
+
+    border:1px solid #eaded5;
+
+    border-radius:11px;
+
+    color:#71665f;
+
+    font-size:14px;
+}
+
+.info-item strong{
+
+    color:#603718;
+}
+
+
+/* =====================================================
+   VIEWER
+===================================================== */
+
+.service-viewer{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    padding:20px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(0,0,0,.78);
+
+    backdrop-filter:blur(6px);
+
+    z-index:99999;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s ease;
+}
+
+.service-viewer.show{
+
+    opacity:1;
+
+    visibility:visible;
+}
+
+.viewer-box{
+
+    position:relative;
+
+    width:min(900px,95vw);
+
+    max-height:92vh;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.45);
+
+    transform:scale(.85);
+
+    transition:.35s ease;
+}
+
+.service-viewer.show .viewer-box{
+
+    transform:scale(1);
+}
+
+
+/* viewer image */
+
+.viewer-image-box{
+
+    position:relative;
+
+    width:100%;
+
+    height:520px;
+
+    background:#111;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+#viewerImage{
+
+    max-width:100%;
+
+    max-height:100%;
+
+    width:auto;
+
+    height:auto;
+
+    object-fit:contain;
+
+    transform:scale(1);
+
+    transition:transform .25s ease;
+
+    user-select:none;
+}
+
+
+/* close */
+
+.viewer-close{
+
+    position:absolute;
+
+    top:12px;
+    right:12px;
+
+    width:42px;
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(0,0,0,.7);
+
+    color:#fff;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    z-index:20;
+
+    transition:.25s ease;
+}
+
+.viewer-close:hover{
+
+    background:#e56c00;
+
+    transform:rotate(90deg);
+}
+
+
+/* zoom */
+
+.zoom-controls{
+
+    position:absolute;
+
+    bottom:18px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    gap:8px;
+
+    padding:7px;
+
+    background:rgba(0,0,0,.65);
+
+    border-radius:12px;
+}
+
+.zoom-controls button{
+
+    width:42px;
+    height:42px;
+
+    border:none;
+
+    border-radius:9px;
+
+    background:#fff;
+
+    color:#333;
+
+    font-size:16px;
+
+    cursor:pointer;
+}
+
+.zoom-controls button:hover{
+
+    background:#e56c00;
+
+    color:#fff;
+}
+
+
+/* viewer text */
+
+.viewer-content{
+
+    padding:18px 22px 20px;
+
+    background:#fff;
+}
+
+.viewer-content h2{
+
+    margin-bottom:5px;
+
+    color:#e56c00;
+
+    font-size:25px;
+}
+
+.viewer-content p{
+
+    color:#555;
+
+    font-size:15px;
+
+    line-height:1.6;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:900px){
+
+    .hero{
+
+        padding:30px;
+    }
+
+    .hero-content{
+
+        gap:20px;
+    }
+
+    .hero-visual{
+
+        width:220px;
+    }
+
+    .hero-image{
+
+        width:155px;
+        height:155px;
+    }
+
+    .services{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    .page{
+
+        padding:10px 10px 30px;
+    }
+
+
+    /* HERO */
+
+    .hero{
+
+        min-height:auto;
+
+        padding:20px 17px 22px;
+
+        border-radius:20px;
+    }
+
+    .hero-content{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:15px;
+    }
+
+
+    /* TITLE */
+
+    .hero-title{
+
+        gap:9px;
+
+        font-size:25px;
+
+        line-height:1.2;
+
+        margin-bottom:9px;
+    }
+
+    .hero-back-btn{
+
+        width:35px;
+        height:35px;
+
+        font-size:14px;
+    }
+
+
+    /* TEXT */
+
+    .hero-text p{
+
+        font-size:13px;
+
+        line-height:1.55;
+    }
+
+
+    /* POINTS */
+
+    .hero-points{
+
+        gap:6px;
+
+        margin-top:13px;
+    }
+
+    .hero-point{
+
+        padding:6px 9px;
+
+        font-size:10.5px;
+
+        gap:5px;
+    }
+
+
+    /* HERO IMAGE */
+
+    .hero-visual{
+
+        width:100%;
+
+        height:150px;
+    }
+
+    .hero-image{
+
+        width:120px;
+        height:120px;
+    }
+
+    .floating-icon{
+
+        width:42px;
+        height:42px;
+
+        font-size:16px;
+    }
+
+    .icon-one{
+
+        top:5px;
+
+        right:10px;
+    }
+
+    .icon-two{
+
+        bottom:0;
+
+        left:15px;
+    }
+
+
+    /* FORM */
+
+    .form-section{
+
+        margin-top:20px;
+
+        padding:18px 15px 21px;
+
+        border-radius:18px;
+    }
+
+    .form-title{
+
+        font-size:19px;
+
+        margin-bottom:17px;
+    }
+
+    .form-title i{
+
+        font-size:21px;
+    }
+
+    .form-grid{
+
+        grid-template-columns:1fr;
+
+        gap:13px;
+    }
+
+    .form-group.full{
+
+        grid-column:auto;
+    }
+
+    .form-group input{
+
+        height:46px;
+
+        font-size:14px;
+    }
+
+    .form-group textarea{
+
+        font-size:14px;
+    }
+
+    .dropdown-selected{
+
+        height:46px;
+
+        font-size:14px;
+    }
+
+    .dropdown-option{
+
+        font-size:14px;
+
+        padding:10px 13px;
+    }
+
+
+    /* BUTTONS */
+
+    .form-actions{
+
+        flex-direction:column;
+
+        gap:9px;
+    }
+
+    .btn-submit,
+    .btn-reset{
+
+        width:100%;
+
+        justify-content:center;
+
+        padding:12px;
+    }
+
+
+    /* SECTION */
+
+    .section-heading{
+
+        font-size:21px;
+
+        margin-top:20px;
+    }
+
+
+    /* SERVICES */
+
+    .services{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        gap:10px;
+    }
+
+    .service-image{
+
+        height:105px;
+    }
+
+    .service-content{
+
+        padding:10px;
+    }
+
+    .service-content h3{
+
+        font-size:15px;
+
+        line-height:1.3;
+    }
+
+    .service-content p{
+
+        font-size:10.5px;
+
+        line-height:1.4;
+    }
+
+
+    /* INFO */
+
+    .info-box{
+
+        padding:17px;
+
+        border-radius:18px;
+    }
+
+    .info-title{
+
+        font-size:18px;
+    }
+
+    .info-grid{
+
+        grid-template-columns:1fr;
+
+        gap:8px;
+    }
+
+    .info-item{
+
+        font-size:13px;
+
+        padding:10px 12px;
+    }
+
+
+    /* VIEWER */
+
+    .service-viewer{
+
+        padding:10px;
+    }
+
+    .viewer-box{
+
+        width:100%;
+
+        border-radius:15px;
+    }
+
+    .viewer-image-box{
+
+        height:390px;
+    }
+
+    .viewer-content{
+
+        padding:14px 15px 17px;
+    }
+
+    .viewer-content h2{
+
+        font-size:20px;
+    }
+
+    .viewer-content p{
+
+        font-size:13px;
+    }
+
+    .viewer-close{
+
+        width:36px;
+        height:36px;
+
+        font-size:16px;
+    }
+
+    .zoom-controls button{
+
+        width:38px;
+        height:38px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:380px){
+
+    .page{
+
+        padding-left:8px;
+        padding-right:8px;
+    }
+
+    .hero{
+
+        padding:18px 14px 20px;
+    }
+
+    .hero-title{
+
+        font-size:22px;
+    }
+
+    .hero-back-btn{
+
+        width:32px;
+        height:32px;
+    }
+
+    .hero-text p{
+
+        font-size:12px;
+    }
+
+    .hero-point{
+
+        font-size:9.5px;
+
+        padding:5px 7px;
+    }
+
+    .hero-visual{
+
+        height:135px;
+    }
+
+    .hero-image{
+
+        width:105px;
+        height:105px;
+    }
+
+    .services{
+
+        gap:8px;
+    }
+
+    .service-image{
+
+        height:95px;
+    }
+
+    .service-content{
+
+        padding:8px;
+    }
+
+    .service-content h3{
+
+        font-size:14px;
+    }
+
+    .service-content p{
+
+        font-size:9.5px;
+    }
+
+    .viewer-image-box{
+
+        height:330px;
+    }
+}
+
 /* =========================================================
-   CARD HEADER
+   CARD HEADER - FULL WIDTH, NO MARGIN
 ========================================================= */
 
 .card-header {
@@ -98,7 +1794,8 @@ textarea {
     width: 100% !important;
     height: 210px !important;
 
-    margin: 0 0 27px 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 
     background-image: url("images/swachhta.png");
     background-repeat: no-repeat;
@@ -106,9 +1803,9 @@ textarea {
     background-position: center;
 
     border: 0 !important;
-    border-bottom: 4px solid var(--orange) !important;
+    border-bottom: 4px solid #f26b18 !important;
 
-    border-radius: 0 0 28px 28px;
+    border-radius: 0 0 28px 28px !important;
 
     overflow: hidden;
 
@@ -178,832 +1875,6 @@ textarea {
 
 
 /* =========================================================
-   SECTION
-========================================================= */
-
-.section {
-    background: var(--white);
-
-    border: 1px solid var(--border);
-
-    border-radius: 24px;
-
-    box-shadow: var(--shadow);
-
-    margin: 0 10px 22px;
-
-    overflow: hidden;
-}
-
-
-/* =========================================================
-   SECTION HEADER
-========================================================= */
-
-.section-head {
-    display: flex;
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 18px 22px;
-
-    border-bottom: 1px solid var(--border);
-
-    background:
-        linear-gradient(
-            90deg,
-            #fff7f1 0%,
-            #ffffff 70%
-        );
-}
-
-.section-head i {
-    width: 40px;
-    height: 40px;
-
-    display: grid;
-    place-items: center;
-
-    background: var(--orange-light);
-
-    color: var(--orange);
-
-    border: 1px solid #f4cbb2;
-
-    border-radius: 9px;
-
-    flex-shrink: 0;
-}
-
-.section-head h3 {
-    color: var(--orange-deep);
-
-    font-size: 20px;
-
-    font-weight: 800;
-}
-
-.section-head p {
-    margin-left: auto;
-
-    color: var(--muted);
-
-    font-size: 12px;
-}
-
-
-/* =========================================================
-   SERVICES
-========================================================= */
-
-.services {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 14px;
-
-    padding: 18px;
-}
-
-.service-card {
-    display: block;
-
-    padding: 18px 14px;
-
-    background: var(--orange-soft);
-
-    border: 1px solid #efd7c8;
-
-    border-radius: 12px;
-
-    text-decoration: none;
-
-    transition: .25s ease;
-
-    cursor: pointer;
-}
-
-.service-card:hover {
-    border-color: var(--orange);
-
-    background: #fff3e9;
-
-    box-shadow:
-        0 8px 22px rgba(242,107,24,.12);
-
-    transform: translateY(-3px);
-}
-
-.service-icon {
-    width: 46px;
-    height: 46px;
-
-    display: grid;
-    place-items: center;
-
-    background: var(--orange-light);
-
-    color: var(--orange);
-
-    border: 1px solid #f3c6a5;
-
-    border-radius: 9px;
-
-    margin-bottom: 11px;
-}
-
-.service-icon i {
-    font-size: 19px;
-}
-
-.service-card h4 {
-    color: var(--orange-deep);
-
-    font-size: 15px;
-
-    font-weight: 800;
-
-    margin-bottom: 3px;
-}
-
-.service-card p {
-    color: var(--muted);
-
-    font-size: 12px;
-}
-
-
-/* =========================================================
-   FORM
-========================================================= */
-
-.form-body {
-    padding: 22px;
-}
-
-
-/* =========================================================
-   NOTICE
-========================================================= */
-
-.notice {
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 10px;
-
-    padding: 13px 15px;
-
-    margin-bottom: 20px;
-
-    background: #fff8f3;
-
-    border: 1px solid #efd8ca;
-
-    border-left: 4px solid var(--orange);
-
-    color: #66544b;
-
-    font-size: 13px;
-
-    border-radius: 7px;
-}
-
-.notice i {
-    color: var(--orange);
-
-    margin-top: 4px;
-}
-
-
-/* =========================================================
-   FORM GRID
-========================================================= */
-
-.form-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 18px 20px;
-}
-
-.form-group {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 6px;
-}
-
-.full-width {
-    grid-column: 1 / -1;
-}
-
-.form-group label {
-    color: #5b2d18;
-
-    font-size: 13px;
-
-    font-weight: 700;
-}
-
-.required {
-    color: var(--danger);
-}
-
-
-/* =========================================================
-   INPUTS
-========================================================= */
-
-.field-control {
-    width: 100%;
-
-    min-height: 48px;
-
-    padding: 10px 13px;
-
-    border: 1px solid #dcc8bb;
-
-    border-radius: 8px;
-
-    background: #ffffff;
-
-    color: var(--text);
-
-    outline: none;
-
-    transition: .2s ease;
-}
-
-.field-control::placeholder {
-    color: #a4948b;
-}
-
-.field-control:hover {
-    border-color: #d5a98c;
-}
-
-.field-control:focus {
-    border-color: var(--orange);
-
-    box-shadow:
-        0 0 0 3px rgba(242,107,24,.12);
-
-    background: #fffdfb;
-}
-
-textarea.field-control {
-    min-height: 120px;
-
-    resize: vertical;
-}
-
-select.field-control {
-    cursor: pointer;
-}
-
-.help-text {
-    color: #88776d;
-
-    font-size: 11px;
-}
-
-
-/* =========================================================
-   UPLOAD
-========================================================= */
-
-.upload-box {
-    border: 1px dashed #d5b5a2;
-
-    border-radius: 9px;
-
-    background: #fffaf7;
-
-    padding: 14px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
-}
-
-.upload-info {
-    color: var(--muted);
-
-    font-size: 12px;
-}
-
-.upload-info i {
-    color: var(--orange);
-}
-
-.file-label {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    padding: 8px 14px;
-
-    border: 1px solid #e3bda4;
-
-    border-radius: 7px;
-
-    background: #fff;
-
-    color: var(--orange-dark);
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    cursor: pointer;
-
-    transition: .2s ease;
-}
-
-.file-label:hover {
-    background: var(--orange-light);
-
-    border-color: var(--orange);
-}
-
-
-/* =========================================================
-   FORM BUTTONS
-========================================================= */
-
-.form-actions {
-    grid-column: 1 / -1;
-
-    display: flex;
-
-    gap: 10px;
-
-    padding-top: 18px;
-
-    border-top: 1px solid var(--border);
-
-    margin-top: 2px;
-}
-
-.btn {
-    min-height: 46px;
-
-    padding: 10px 20px;
-
-    border-radius: 8px;
-
-    font-size: 14px;
-
-    font-weight: 800;
-
-    cursor: pointer;
-
-    transition: .2s ease;
-}
-
-.btn-primary {
-    border: 1px solid var(--orange);
-
-    background: var(--orange);
-
-    color: #ffffff;
-
-    box-shadow:
-        0 4px 12px rgba(242,107,24,.16);
-}
-
-.btn-primary:hover {
-    background: var(--orange-dark);
-
-    border-color: var(--orange-dark);
-
-    transform: translateY(-1px);
-
-    box-shadow:
-        0 6px 18px rgba(242,107,24,.22);
-}
-
-.btn-secondary {
-    border: 1px solid #d7c8bf;
-
-    background: #ffffff;
-
-    color: #66564d;
-}
-
-.btn-secondary:hover {
-    background: #fff5ee;
-
-    border-color: #e3b89d;
-
-    color: var(--orange-dark);
-}
-
-
-/* =========================================================
-   BENEFITS
-========================================================= */
-
-.benefits {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 14px;
-
-    padding: 18px;
-}
-
-.benefit {
-    padding: 16px;
-
-    border: 1px solid #ead8cc;
-
-    border-radius: 10px;
-
-    background: #fffaf7;
-
-    display: flex;
-
-    gap: 12px;
-
-    align-items: flex-start;
-}
-
-.benefit-icon {
-    width: 38px;
-    height: 38px;
-
-    flex: 0 0 auto;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 8px;
-
-    background: var(--orange-light);
-
-    color: var(--orange);
-
-    border: 1px solid #f2cdb7;
-}
-
-.benefit h4 {
-    color: var(--orange-deep);
-
-    font-size: 14px;
-
-    font-weight: 800;
-
-    margin-bottom: 2px;
-}
-
-.benefit p {
-    color: var(--muted);
-
-    font-size: 11px;
-}
-
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact {
-    padding: 22px;
-}
-
-.contact-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 12px;
-}
-
-.contact-item {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 13px;
-
-    border: 1px solid #ead8cc;
-
-    border-radius: 8px;
-
-    background: #fffaf7;
-}
-
-.contact-item i {
-    width: 34px;
-    height: 34px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 7px;
-
-    background: var(--orange-light);
-
-    color: var(--orange);
-}
-
-.contact-item strong {
-    display: block;
-
-    color: var(--orange-deep);
-
-    font-size: 12px;
-}
-
-.contact-item span {
-    display: block;
-
-    color: var(--muted);
-
-    font-size: 11px;
-
-    word-break: break-word;
-}
-
-
-/* =========================================================
-   CUSTOM DROPDOWN
-========================================================= */
-
-.custom-select-wrap {
-    position: relative;
-
-    width: 100%;
-}
-
-.custom-select-native {
-    position: absolute !important;
-
-    width: 1px !important;
-    height: 1px !important;
-
-    padding: 0 !important;
-    margin: -1px !important;
-
-    overflow: hidden !important;
-
-    clip: rect(0,0,0,0) !important;
-
-    white-space: nowrap !important;
-
-    border: 0 !important;
-}
-
-.custom-select-trigger {
-    width: 100%;
-
-    min-height: 48px;
-
-    padding: 10px 44px 10px 14px;
-
-    border: 1px solid #dcc8bb;
-
-    border-radius: 8px;
-
-    background: linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #fff8f3 100%
-    );
-
-    color: var(--text);
-
-    text-align: left;
-
-    font-family: "Noto Sans Devanagari", sans-serif;
-
-    font-size: 15px;
-
-    font-weight: 500;
-
-    cursor: pointer;
-
-    position: relative;
-
-    outline: none;
-
-    transition: .2s ease;
-}
-
-.custom-select-trigger:hover {
-    border-color: #dfa27c;
-
-    background: #fffaf7;
-}
-
-.custom-select-wrap.open .custom-select-trigger {
-    border-color: var(--orange);
-
-    box-shadow:
-        0 0 0 3px rgba(242,107,24,.12);
-
-    background: #ffffff;
-}
-
-.custom-select-arrow {
-    position: absolute;
-
-    right: 15px;
-
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    color: #9b684d;
-
-    font-size: 13px;
-
-    pointer-events: none;
-
-    transition: .25s ease;
-}
-
-.custom-select-wrap.open .custom-select-arrow {
-    transform:
-        translateY(-50%)
-        rotate(180deg);
-
-    color: var(--orange);
-}
-
-.custom-select-menu {
-    position: absolute;
-
-    z-index: 1000;
-
-    left: 0;
-    right: 0;
-
-    top: calc(100% + 7px);
-
-    max-height: 260px;
-
-    overflow-y: auto;
-
-    padding: 6px;
-
-    border: 1px solid #e5c8b7;
-
-    border-radius: 10px;
-
-    background: rgba(255,255,255,.98);
-
-    box-shadow:
-        0 14px 35px rgba(120,55,20,.15),
-        0 3px 10px rgba(120,55,20,.08);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transform:
-        translateY(-8px)
-        scale(.98);
-
-    transform-origin: top center;
-
-    transition:
-        opacity .2s ease,
-        transform .22s ease,
-        visibility .22s;
-
-    backdrop-filter: blur(8px);
-}
-
-.custom-select-wrap.open .custom-select-menu {
-    opacity: 1;
-
-    visibility: visible;
-
-    transform:
-        translateY(0)
-        scale(1);
-}
-
-.custom-select-option {
-    min-height: 40px;
-
-    display: flex;
-
-    align-items: center;
-
-    padding: 8px 11px;
-
-    border-radius: 7px;
-
-    color: #5b321f;
-
-    font-family: "Noto Sans Devanagari", sans-serif;
-
-    font-size: 15px;
-
-    font-weight: 500;
-
-    cursor: pointer;
-
-    transition: .15s ease;
-}
-
-.custom-select-option:hover {
-    background: var(--orange-light);
-
-    color: var(--orange-dark);
-
-    transform: translateX(2px);
-}
-
-.custom-select-option.selected {
-    background: #ffe3d1;
-
-    color: var(--orange-dark);
-
-    font-weight: 700;
-}
-
-.custom-select-option.selected::after {
-    content: "✓";
-
-    margin-left: auto;
-
-    font-weight: 800;
-
-    color: var(--orange);
-}
-
-.custom-select-menu::-webkit-scrollbar {
-    width: 6px;
-}
-
-.custom-select-menu::-webkit-scrollbar-track {
-    background: #fff2e9;
-
-    border-radius: 10px;
-}
-
-.custom-select-menu::-webkit-scrollbar-thumb {
-    background: #eabda0;
-
-    border-radius: 10px;
-}
-
-
-/* =========================================================
-   FOCUS
-========================================================= */
-
-:focus-visible {
-    outline: 3px solid rgba(242,107,24,.25);
-
-    outline-offset: 2px;
-}
-
-
-/* =========================================================
-   RESPONSIVE 900px
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .services {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .benefits {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* =========================================================
    RESPONSIVE 768px
 ========================================================= */
 
@@ -1012,8 +1883,7 @@ select.field-control {
     .card-header {
         height: 165px !important;
 
-        border-radius:
-            0 0 22px 22px;
+        border-radius: 0 0 22px 22px !important;
     }
 
     .header-back-btn {
@@ -1037,10 +1907,7 @@ select.field-control {
     .card-header {
         height: 145px !important;
 
-        margin-bottom: 18px !important;
-
-        border-radius:
-            0 0 18px 18px;
+        border-radius: 0 0 18px 18px !important;
     }
 
     .header-back-btn {
@@ -1051,104 +1918,6 @@ select.field-control {
         height: 34px !important;
 
         font-size: 21px !important;
-    }
-
-    .section {
-        margin-left: 8px;
-        margin-right: 8px;
-
-        border-radius: 18px;
-    }
-
-    .section-head {
-        padding: 14px;
-    }
-
-    .section-head h3 {
-        font-size: 17px;
-    }
-
-    .section-head p {
-        display: none;
-    }
-
-    .services {
-        grid-template-columns: 1fr 1fr;
-
-        padding: 12px;
-
-        gap: 10px;
-    }
-
-    .service-card {
-        padding: 14px 11px;
-    }
-
-    .service-card h4 {
-        font-size: 13px;
-    }
-
-    .service-card p {
-        font-size: 10px;
-    }
-
-    .service-icon {
-        width: 38px;
-        height: 38px;
-
-        margin-bottom: 8px;
-    }
-
-    .form-body {
-        padding: 14px;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr;
-
-        gap: 14px;
-    }
-
-    .full-width {
-        grid-column: auto;
-    }
-
-    .form-actions {
-        grid-column: auto;
-
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
-    }
-
-    .benefits {
-        grid-template-columns: 1fr 1fr;
-
-        padding: 12px;
-
-        gap: 10px;
-    }
-
-    .benefit {
-        padding: 12px;
-
-        gap: 8px;
-    }
-
-    .contact {
-        padding: 14px;
-    }
-
-    .custom-select-menu {
-        max-height: 220px;
-    }
-
-    .custom-select-option {
-        font-size: 14px;
-
-        min-height: 42px;
     }
 }
 
@@ -1172,18 +1941,6 @@ select.field-control {
 
         font-size: 20px !important;
     }
-
-    .services {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .benefits {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .service-card {
-        min-height: 145px;
-    }
 }
 
 
@@ -1193,13 +1950,18 @@ select.field-control {
 
 @media (max-width: 390px) {
 
-    .services,
-    .benefits {
-        grid-template-columns: 1fr;
+    .card-header {
+        height: 125px !important;
     }
 
-    .service-card {
-        min-height: auto;
+    .header-back-btn {
+        top: 8px !important;
+        left: 8px !important;
+
+        width: 30px !important;
+        height: 30px !important;
+
+        font-size: 18px !important;
     }
 }
 
@@ -1227,18 +1989,14 @@ select.field-control {
 
 </style>
 
-
-
 </head>
 
 
 <body>
 
-
 <!-- =====================================================
-     HEADER IMAGE
+     HEADER - FULL WIDTH (page च्या बाहेर)
 ===================================================== -->
-
 
 <div class="card-header complaint-header">
 
@@ -1255,943 +2013,630 @@ select.field-control {
 </div>
 
 
+<div class="page">
 
     <!-- =================================================
-         SWACHHTA SERVICES
+         FORM
     ================================================= -->
 
-    <section
-        class="section"
-        aria-labelledby="services-title">
+    <section class="form-section">
 
 
-        <div class="section-head">
+        <div class="form-title">
 
-            <i
-                class="fa-solid fa-list-check"
-                aria-hidden="true">
-            </i>
+            <i class="fa-solid fa-clipboard-list"></i>
 
-            <h3 id="services-title">
-                स्वच्छता संबंधित सेवा
-            </h3>
-
-            <p>
-                योग्य पर्याय निवडा
-            </p>
+            स्वच्छता सेवा / तक्रार नोंदणी
 
         </div>
 
 
-        <div class="services">
+        <form>
+
+            <div class="form-grid">
 
 
-            <!-- SERVICE 1 -->
+                <!-- NAME -->
 
-            <a
-                href="#complaint-form"
-                class="service-card"
-                data-problem="कचरा संकलन">
+                <div class="form-group">
 
-                <div class="service-icon">
+                    <label>
 
-                    <i class="fa-solid fa-trash-can"></i>
+                        नागरिकाचे नाव
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <input type="text"
+                           placeholder="नागरिकाचे नाव प्रविष्ट करा"
+                           required>
 
                 </div>
 
-                <h4>
+
+                <!-- MOBILE -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        मोबाईल क्रमांक
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <input type="tel"
+                           maxlength="10"
+                           inputmode="numeric"
+                           placeholder="मोबाईल क्रमांक प्रविष्ट करा"
+                           required>
+
+                </div>
+
+
+                <!-- WARD -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        प्रभाग निवडा
+
+                        <span class="required">*</span>
+
+                    </label>
+
+
+                    <div class="custom-dropdown">
+
+
+                        <div class="dropdown-selected">
+
+                            <span class="selected-text">
+                                प्रभाग निवडा
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+
+                        </div>
+
+
+                        <div class="dropdown-options">
+
+                            <div class="dropdown-option selected">
+                                प्रभाग निवडा
+                            </div>
+
+                            <div class="dropdown-option">
+                                प्रभाग क्र. १
+                            </div>
+
+                            <div class="dropdown-option">
+                                प्रभाग क्र. २
+                            </div>
+
+                            <div class="dropdown-option">
+                                प्रभाग क्र. ३
+                            </div>
+
+                            <div class="dropdown-option">
+                                प्रभाग क्र. ४
+                            </div>
+
+                            <div class="dropdown-option">
+                                प्रभाग क्र. ५
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SERVICE -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        सेवा प्रकार
+
+                        <span class="required">*</span>
+
+                    </label>
+
+
+                    <div class="custom-dropdown">
+
+
+                        <div class="dropdown-selected">
+
+                            <span class="selected-text">
+                                सेवा प्रकार निवडा
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+
+                        </div>
+
+
+                        <div class="dropdown-options">
+
+                            <div class="dropdown-option selected">
+                                सेवा प्रकार निवडा
+                            </div>
+
+                            <div class="dropdown-option">
+                                कचरा संकलन
+                            </div>
+
+                            <div class="dropdown-option">
+                                कचरा गाडी सेवा
+                            </div>
+
+                            <div class="dropdown-option">
+                                परिसर स्वच्छता
+                            </div>
+
+                            <div class="dropdown-option">
+                                घनकचरा व्यवस्थापन
+                            </div>
+
+                            <div class="dropdown-option">
+                                इतर स्वच्छता सेवा
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WASTE -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        कचऱ्याचा प्रकार
+
+                        <span class="required">*</span>
+
+                    </label>
+
+
+                    <div class="custom-dropdown">
+
+
+                        <div class="dropdown-selected">
+
+                            <span class="selected-text">
+                                कचऱ्याचा प्रकार निवडा
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+
+                        </div>
+
+
+                        <div class="dropdown-options">
+
+                            <div class="dropdown-option selected">
+                                कचऱ्याचा प्रकार निवडा
+                            </div>
+
+                            <div class="dropdown-option">
+                                ओला कचरा
+                            </div>
+
+                            <div class="dropdown-option">
+                                सुका कचरा
+                            </div>
+
+                            <div class="dropdown-option">
+                                प्लास्टिक कचरा
+                            </div>
+
+                            <div class="dropdown-option">
+                                घरगुती कचरा
+                            </div>
+
+                            <div class="dropdown-option">
+                                इतर
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        ठिकाण / परिसर
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <input type="text"
+                           placeholder="ठिकाण किंवा परिसराचे नाव प्रविष्ट करा"
+                           required>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group full">
+
+                    <label>
+
+                        समस्या / अतिरिक्त माहिती
+
+                    </label>
+
+                    <textarea
+                        placeholder="स्वच्छतेशी संबंधित समस्या किंवा अतिरिक्त माहिती येथे लिहा..."></textarea>
+
+                </div>
+
+
+                <!-- BUTTON -->
+
+                <div class="form-actions">
+
+
+                    <button type="submit"
+                            class="btn-submit">
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                        नोंदणी करा
+
+                    </button>
+
+
+                    <button type="reset"
+                            class="btn-reset">
+
+                        <i class="fa-solid fa-rotate-left"></i>
+
+                        रीसेट करा
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SERVICES TITLE
+    ================================================= -->
+
+    <h2 class="section-heading">
+
+        स्वच्छता सेवा
+
+    </h2>
+
+
+
+    <!-- =================================================
+         SERVICES
+    ================================================= -->
+
+    <section class="services">
+
+
+        <!-- SERVICE 1 -->
+
+        <div class="service-card">
+
+            <div class="service-image">
+
+                <div class="image-slider">
+
+                    <img src="images/garbage1.jpg"
+                         alt="कचरा संकलन">
+
+                    <img src="images/garbage2.jpg"
+                         alt="कचरा संकलन">
+
+                    <img src="images/garbage3.jpg"
+                         alt="कचरा संकलन">
+
+                </div>
+
+            </div>
+
+
+            <div class="service-content">
+
+                <h3>
                     कचरा संकलन
-                </h4>
+                </h3>
 
                 <p>
-                    आपल्या परिसरातील घरगुती कचरा संकलन
+                    आपल्या परिसरातील घरगुती कचरा
+                    संकलनाची माहिती व सेवा.
                 </p>
 
-            </a>
+            </div>
+
+        </div>
 
 
 
-            <!-- SERVICE 2 -->
+        <!-- SERVICE 2 -->
 
-            <a
-                href="#complaint-form"
-                class="service-card"
-                data-problem="घनकचरा व्यवस्थापन">
+        <div class="service-card">
 
-                <div class="service-icon">
+            <div class="service-image">
 
-                    <i class="fa-solid fa-recycle"></i>
+                <div class="image-slider">
+
+                    <img src="images/solid1.jpg"
+                         alt="घनकचरा व्यवस्थापन">
+
+                    <img src="images/solid2.jpg"
+                         alt="घनकचरा व्यवस्थापन">
+
+                    <img src="images/solid3.jpg"
+                         alt="घनकचरा व्यवस्थापन">
 
                 </div>
 
-                <h4>
+            </div>
+
+
+            <div class="service-content">
+
+                <h3>
                     घनकचरा व्यवस्थापन
-                </h4>
+                </h3>
 
                 <p>
-                    ओला व सुका कचरा वर्गीकरण व व्यवस्थापन
+                    ओला व सुका कचरा वर्गीकरण
+                    आणि योग्य व्यवस्थापन.
                 </p>
 
-            </a>
+            </div>
+
+        </div>
 
 
 
-            <!-- SERVICE 3 -->
+        <!-- SERVICE 3 -->
 
-            <a
-                href="#complaint-form"
-                class="service-card"
-                data-problem="कचरा गाडी सेवा">
+        <div class="service-card">
 
-                <div class="service-icon">
+            <div class="service-image">
 
-                    <i class="fa-solid fa-truck"></i>
+                <div class="image-slider">
+
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Door-to-door_Garbage_Collection_Vans_in_Indore_-_Under_Swachh_Bharat_Abhiyan.jpg/960px-Door-to-door_Garbage_Collection_Vans_in_Indore_-_Under_Swachh_Bharat_Abhiyan.jpg"
+                         alt="कचरा गाडी सेवा">
+
+                    <img src="https://images.hindustantimes.com/img/2022/12/19/original/With-the-garbage-in-the-fast-developing-city-incre_1671458958678.jpg"
+                         alt="कचरा संकलन">
+
+                    <img src="https://www.convexiconindia.com/wp-content/uploads/2021/03/solid-waste-management-truck-2.jpg"
+                         alt="घनकचरा वाहतूक">
 
                 </div>
 
-                <h4>
+            </div>
+
+
+            <div class="service-content">
+
+                <h3>
                     कचरा गाडी सेवा
-                </h4>
+                </h3>
 
                 <p>
-                    कचरा संकलन वाहनांचे वेळापत्रक
+                    कचरा संकलन करणाऱ्या वाहनांचे
+                    वेळापत्रक व माहिती.
                 </p>
 
-            </a>
+            </div>
+
+        </div>
 
 
 
-            <!-- SERVICE 4 -->
+        <!-- SERVICE 4 -->
 
-            <a
-                href="#complaint-form"
-                class="service-card"
-                data-problem="परिसर स्वच्छता">
+        <div class="service-card">
 
-                <div class="service-icon">
+            <div class="service-image">
 
-                    <i class="fa-solid fa-broom"></i>
+                <div class="image-slider">
+
+                    <img src="https://media.assettype.com/freepressjournal-marathi/2025-07-01/eyzpg18q/freepressjournal-marathi2024-01181202c7-ea0c-40a9-9b02-e45b62a8abd2rseet.avif?auto=format%2Ccompress&enlarge=true&fit=max&h=675&w=1200"
+                         alt="परिसर स्वच्छता">
+
+                    <img src="https://media.newindianexpress.com/newindianexpress%2F2025-09-18%2Fhbqcc05i%2FAQI-story.JPG"
+                         alt="रस्ता स्वच्छता">
+
+                    <img src="https://www.hindustantimes.com/ht-img/img/2023/08/13/1600x900/An-MCD-official-said-that-a-feed-of-images-from-ac_1691949079298.jpg"
+                         alt="महानगरपालिका स्वच्छता">
 
                 </div>
 
-                <h4>
+            </div>
+
+
+            <div class="service-content">
+
+                <h3>
                     परिसर स्वच्छता
-                </h4>
+                </h3>
 
                 <p>
-                    रस्ते व सार्वजनिक ठिकाणे स्वच्छता
+                    रस्ते, सार्वजनिक ठिकाणे व परिसर
+                    स्वच्छतेची माहिती.
                 </p>
 
-            </a>
+            </div>
+
+        </div>
 
 
 
-            <!-- SERVICE 5 -->
+        <!-- SERVICE 5 -->
 
-            <a
-                href="#complaint-form"
-                class="service-card"
-                data-problem="स्वच्छता सूचना">
+        <div class="service-card">
 
-                <div class="service-icon">
+            <div class="service-image">
 
-                    <i class="fa-solid fa-bullhorn"></i>
+                <div class="image-slider">
+
+                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=85"
+                         alt="स्वच्छता सूचना">
+
+                    <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?auto=format&fit=crop&w=900&q=85"
+                         alt="स्वच्छ परिसर">
+
+                    <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=900&q=85"
+                         alt="कचरा व्यवस्थापन">
 
                 </div>
 
-                <h4>
+            </div>
+
+
+            <div class="service-content">
+
+                <h3>
                     स्वच्छता सूचना
-                </h4>
+                </h3>
 
                 <p>
-                    नगर परिषदेकडून स्वच्छता सूचना
+                    नगर परिषदेकडून प्रसिद्ध करण्यात येणाऱ्या
+                    स्वच्छता सूचना व मार्गदर्शक माहिती.
                 </p>
 
-            </a>
+            </div>
+
+        </div>
 
 
 
-            <!-- SERVICE 6 -->
+        <!-- SERVICE 6 -->
 
-            <a
-                href="#complaint-form"
-                class="service-card"
-                data-problem="स्वच्छता अभियान">
+        <div class="service-card">
 
-                <div class="service-icon">
+            <div class="service-image">
 
-                    <i class="fa-solid fa-flag"></i>
+                <div class="image-slider">
+
+                    <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?auto=format&fit=crop&w=900&q=85"
+                         alt="स्वच्छता अभियान">
+
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=85"
+                         alt="परिसर स्वच्छता">
+
+                    <img src="https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?auto=format&fit=crop&w=900&q=85"
+                         alt="कचरा स्वच्छता">
 
                 </div>
 
-                <h4>
+            </div>
+
+
+            <div class="service-content">
+
+                <h3>
                     स्वच्छता अभियान
-                </h4>
+                </h3>
 
                 <p>
-                    शहर स्वच्छतेसाठी राबविण्यात येणाऱ्या मोहिमा
+                    शहर स्वच्छ ठेवण्यासाठी राबविण्यात
+                    येणाऱ्या विविध स्वच्छता मोहिमा.
                 </p>
 
-            </a>
-
+            </div>
 
         </div>
+
 
     </section>
 
 
 
     <!-- =================================================
-         COMPLAINT FORM
+         IMPORTANT INFORMATION
     ================================================= -->
 
-    <section
-        class="section"
-        id="complaint-form"
-        aria-labelledby="form-title">
+    <section class="info-box">
 
 
-        <div class="section-head">
+        <div class="info-title">
 
-            <i
-                class="fa-solid fa-pen-to-square"
-                aria-hidden="true">
-            </i>
+            <i class="fa-solid fa-circle-info"></i>
 
-            <h3 id="form-title">
-                स्वच्छता तक्रार / सेवा अर्ज
-            </h3>
-
-            <p>
-                <span class="required">*</span>
-                अनिवार्य माहिती
-            </p>
+            नागरिकांसाठी महत्त्वाची माहिती
 
         </div>
 
 
-        <div class="form-body">
+        <div class="info-grid">
 
 
-            <!-- NOTICE -->
+            <div class="info-item">
 
-            <div class="notice">
+                <strong>ओला कचरा:</strong>
 
-                <i class="fa-solid fa-circle-info"></i>
-
-                <div>
-
-                    <strong>सूचना:</strong>
-
-                    कृपया अचूक माहिती भरा.
-                    चुकीची किंवा अपूर्ण माहिती दिल्यास
-                    सेवा / तक्रारीच्या प्रक्रियेत विलंब होऊ शकतो.
-
-                </div>
+                घरातील ओला कचरा स्वतंत्रपणे जमा करावा.
 
             </div>
 
 
+            <div class="info-item">
 
-            <!-- FORM -->
+                <strong>सुका कचरा:</strong>
 
-            <form
-                id="swachhtaForm"
-                action=""
-                method="post"
-                enctype="multipart/form-data">
-
-
-                <div class="form-grid">
-
-
-                    <!-- NAME -->
-
-                    <div class="form-group">
-
-                        <label for="name">
-
-                            नागरिकाचे पूर्ण नाव
-
-                            <span class="required">*</span>
-
-                        </label>
-
-                        <input
-                            class="field-control"
-                            id="name"
-                            name="name"
-                            type="text"
-                            placeholder="पूर्ण नाव प्रविष्ट करा"
-                            autocomplete="name"
-                            minlength="2"
-                            maxlength="100"
-                            required>
-
-                    </div>
-
-
-
-                    <!-- MOBILE -->
-
-                    <div class="form-group">
-
-                        <label for="mobile">
-
-                            मोबाईल क्रमांक
-
-                            <span class="required">*</span>
-
-                        </label>
-
-                        <input
-                            class="field-control"
-                            id="mobile"
-                            name="mobile"
-                            type="tel"
-                            placeholder="१० अंकी मोबाईल क्रमांक"
-                            inputmode="numeric"
-                            autocomplete="tel"
-                            pattern="[6-9][0-9]{9}"
-                            maxlength="10"
-                            required>
-
-                        <span class="help-text">
-                            उदा. 9876543210
-                        </span>
-
-                    </div>
-
-
-
-                    <!-- WARD -->
-
-                    <div class="form-group">
-
-                        <label for="ward">
-
-                            प्रभाग क्रमांक
-
-                            <span class="required">*</span>
-
-                        </label>
-
-
-                        <div class="custom-select-wrap">
-
-
-                            <select
-                                class="field-control custom-select-native"
-                                id="ward"
-                                name="ward"
-                                required>
-
-                                <option value="">
-                                    प्रभाग निवडा
-                                </option>
-
-                                <option value="1">
-                                    प्रभाग क्र. १
-                                </option>
-
-                                <option value="2">
-                                    प्रभाग क्र. २
-                                </option>
-
-                                <option value="3">
-                                    प्रभाग क्र. ३
-                                </option>
-
-                                <option value="4">
-                                    प्रभाग क्र. ४
-                                </option>
-
-                                <option value="5">
-                                    प्रभाग क्र. ५
-                                </option>
-
-                                <option value="6">
-                                    प्रभाग क्र. ६
-                                </option>
-
-                                <option value="7">
-                                    प्रभाग क्र. ७
-                                </option>
-
-                                <option value="8">
-                                    प्रभाग क्र. ८
-                                </option>
-
-                                <option value="9">
-                                    प्रभाग क्र. ९
-                                </option>
-
-                                <option value="10">
-                                    प्रभाग क्र. १०
-                                </option>
-
-                            </select>
-
-
-                            <button
-                                type="button"
-                                class="custom-select-trigger"
-                                aria-haspopup="listbox"
-                                aria-expanded="false">
-
-                                <span class="custom-select-value">
-                                    प्रभाग निवडा
-                                </span>
-
-                                <i class="fa-solid fa-chevron-down custom-select-arrow"></i>
-
-                            </button>
-
-
-                            <div
-                                class="custom-select-menu"
-                                role="listbox">
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- SERVICE TYPE -->
-
-                    <div class="form-group">
-
-                        <label for="serviceType">
-
-                            सेवा / तक्रार प्रकार
-
-                            <span class="required">*</span>
-
-                        </label>
-
-
-                        <div class="custom-select-wrap">
-
-
-                            <select
-                                class="field-control custom-select-native"
-                                id="serviceType"
-                                name="serviceType"
-                                required>
-
-                                <option value="">
-                                    सेवा प्रकार निवडा
-                                </option>
-
-                                <option>
-                                    कचरा संकलन
-                                </option>
-
-                                <option>
-                                    कचरा गाडी सेवा
-                                </option>
-
-                                <option>
-                                    परिसर स्वच्छता
-                                </option>
-
-                                <option>
-                                    घनकचरा व्यवस्थापन
-                                </option>
-
-                                <option>
-                                    स्वच्छता सूचना
-                                </option>
-
-                                <option>
-                                    स्वच्छता अभियान
-                                </option>
-
-                                <option>
-                                    इतर
-                                </option>
-
-                            </select>
-
-
-                            <button
-                                type="button"
-                                class="custom-select-trigger"
-                                aria-haspopup="listbox"
-                                aria-expanded="false">
-
-                                <span class="custom-select-value">
-                                    सेवा प्रकार निवडा
-                                </span>
-
-                                <i class="fa-solid fa-chevron-down custom-select-arrow"></i>
-
-                            </button>
-
-
-                            <div
-                                class="custom-select-menu"
-                                role="listbox">
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- WASTE TYPE -->
-
-                    <div class="form-group">
-
-                        <label for="wasteType">
-
-                            कचऱ्याचा प्रकार
-
-                            <span class="required">*</span>
-
-                        </label>
-
-
-                        <div class="custom-select-wrap">
-
-
-                            <select
-                                class="field-control custom-select-native"
-                                id="wasteType"
-                                name="wasteType"
-                                required>
-
-                                <option value="">
-                                    कचऱ्याचा प्रकार निवडा
-                                </option>
-
-                                <option>
-                                    ओला कचरा
-                                </option>
-
-                                <option>
-                                    सुका कचरा
-                                </option>
-
-                                <option>
-                                    प्लास्टिक कचरा
-                                </option>
-
-                                <option>
-                                    घरगुती कचरा
-                                </option>
-
-                                <option>
-                                    इतर
-                                </option>
-
-                            </select>
-
-
-                            <button
-                                type="button"
-                                class="custom-select-trigger"
-                                aria-haspopup="listbox"
-                                aria-expanded="false">
-
-                                <span class="custom-select-value">
-                                    कचऱ्याचा प्रकार निवडा
-                                </span>
-
-                                <i class="fa-solid fa-chevron-down custom-select-arrow"></i>
-
-                            </button>
-
-
-                            <div
-                                class="custom-select-menu"
-                                role="listbox">
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- LOCATION -->
-
-                    <div class="form-group">
-
-                        <label for="location">
-
-                            ठिकाण / परिसर
-
-                            <span class="required">*</span>
-
-                        </label>
-
-                        <input
-                            class="field-control"
-                            id="location"
-                            name="location"
-                            type="text"
-                            placeholder="ठिकाण किंवा परिसराचे नाव प्रविष्ट करा"
-                            maxlength="250"
-                            required>
-
-                    </div>
-
-
-
-                    <!-- DESCRIPTION -->
-
-                    <div class="form-group full-width">
-
-                        <label for="description">
-
-                            समस्या / सविस्तर तपशील
-
-                            <span class="required">*</span>
-
-                        </label>
-
-                        <textarea
-                            class="field-control"
-                            id="description"
-                            name="description"
-                            placeholder="स्वच्छतेशी संबंधित समस्या किंवा अतिरिक्त माहिती येथे लिहा..."
-                            minlength="10"
-                            maxlength="1000"
-                            required></textarea>
-
-                        <span class="help-text">
-                            कमाल १००० अक्षरे.
-                        </span>
-
-                    </div>
-
-
-
-                    <!-- PHOTO -->
-
-                    <div class="form-group full-width">
-
-                        <label for="photo">
-
-                            समस्येचा फोटो
-
-                            <span
-                                style="font-weight:500;color:var(--muted)">
-
-                                (ऐच्छिक)
-
-                            </span>
-
-                        </label>
-
-
-                        <div class="upload-box">
-
-
-                            <span class="upload-info">
-
-                                <i class="fa-regular fa-image"></i>
-
-                                JPG, JPEG किंवा PNG
-                                · कमाल 2 MB
-
-                            </span>
-
-
-                            <label
-                                class="file-label"
-                                for="photo">
-
-                                <i class="fa-solid fa-upload"></i>
-
-                                फाईल निवडा
-
-                            </label>
-
-
-                            <input
-                                id="photo"
-                                name="photo"
-                                type="file"
-                                accept=".jpg,.jpeg,.png,image/jpeg,image/png"
-                                hidden>
-
-
-                            <span
-                                id="fileName"
-                                class="help-text">
-                            </span>
-
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- ACTIONS -->
-
-                    <div class="form-actions">
-
-
-                        <button
-                            type="submit"
-                            class="btn btn-primary">
-
-                            <i class="fa-solid fa-paper-plane"></i>
-
-                            नोंदणी करा
-
-                        </button>
-
-
-                        <button
-                            type="reset"
-                            class="btn btn-secondary">
-
-                            <i class="fa-solid fa-rotate-left"></i>
-
-                            माहिती साफ करा
-
-                        </button>
-
-
-                    </div>
-
-
-                </div>
-
-            </form>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         BENEFITS
-    ================================================= -->
-
-    <section
-        class="section"
-        aria-labelledby="process-title">
-
-
-        <div class="section-head">
-
-            <i
-                class="fa-solid fa-circle-check"
-                aria-hidden="true">
-            </i>
-
-            <h3 id="process-title">
-                नागरिकांसाठी महत्त्वाची माहिती
-            </h3>
-
-        </div>
-
-
-        <div class="benefits">
-
-
-            <div class="benefit">
-
-                <div class="benefit-icon">
-
-                    <i class="fa-solid fa-apple-whole"></i>
-
-                </div>
-
-                <div>
-
-                    <h4>
-                        ओला कचरा
-                    </h4>
-
-                    <p>
-                        घरातील ओला कचरा स्वतंत्रपणे जमा करावा.
-                    </p>
-
-                </div>
+                कागद, प्लास्टिक व इतर सुका कचरा वेगळा ठेवावा.
 
             </div>
 
 
+            <div class="info-item">
 
-            <div class="benefit">
+                <strong>कचरा वेळ:</strong>
 
-                <div class="benefit-icon">
-
-                    <i class="fa-solid fa-box"></i>
-
-                </div>
-
-                <div>
-
-                    <h4>
-                        सुका कचरा
-                    </h4>
-
-                    <p>
-                        कागद, प्लास्टिक व इतर सुका कचरा वेगळा ठेवावा.
-                    </p>
-
-                </div>
+                कचरा संकलन वाहन आल्यावरच कचरा द्यावा.
 
             </div>
 
 
+            <div class="info-item">
 
-            <div class="benefit">
+                <strong>स्वच्छ परिसर:</strong>
 
-                <div class="benefit-icon">
-
-                    <i class="fa-solid fa-clock"></i>
-
-                </div>
-
-                <div>
-
-                    <h4>
-                        कचरा वेळ
-                    </h4>
-
-                    <p>
-                        कचरा संकलन वाहन आल्यावरच कचरा द्यावा.
-                    </p>
-
-                </div>
+                सार्वजनिक ठिकाणी कचरा टाकू नये.
 
             </div>
 
-
-
-            <div class="benefit">
-
-                <div class="benefit-icon">
-
-                    <i class="fa-solid fa-leaf"></i>
-
-                </div>
-
-                <div>
-
-                    <h4>
-                        स्वच्छ परिसर
-                    </h4>
-
-                    <p>
-                        सार्वजनिक ठिकाणी कचरा टाकू नये.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         CONTACT
-    ================================================= -->
-
-    <section
-        class="section"
-        aria-labelledby="contact-title">
-
-
-        <div class="section-head">
-
-            <i
-                class="fa-solid fa-headset"
-                aria-hidden="true">
-            </i>
-
-            <h3 id="contact-title">
-                स्वच्छता विभागाशी संपर्क
-            </h3>
-
-        </div>
-
-
-        <div class="contact">
-
-
-            <div class="contact-grid">
-
-
-                <div class="contact-item">
-
-                    <i class="fa-solid fa-phone"></i>
-
-                    <div>
-
-                        <strong>
-                            दूरध्वनी
-                        </strong>
-
-                        <span>
-                            07264-XXXXXX
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="contact-item">
-
-                    <i class="fa-regular fa-envelope"></i>
-
-                    <div>
-
-                        <strong>
-                            ई-मेल
-                        </strong>
-
-                        <span>
-                            स्वच्छता@chikhlicouncil.gov.in
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="contact-item">
-
-                    <i class="fa-solid fa-location-dot"></i>
-
-                    <div>
-
-                        <strong>
-                            कार्यालय
-                        </strong>
-
-                        <span>
-                            चिखली नगर परिषद
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-            </div>
 
         </div>
 
@@ -2203,408 +2648,405 @@ select.field-control {
 
 
 <!-- =====================================================
-     JAVASCRIPT
+     IMAGE VIEWER
 ===================================================== -->
+
+<div class="service-viewer"
+     id="serviceViewer">
+
+
+    <div class="viewer-box">
+
+
+        <button class="viewer-close"
+                id="viewerClose">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="viewer-image-box">
+
+            <img id="viewerImage"
+                 src=""
+                 alt="">
+
+
+            <div class="zoom-controls">
+
+
+                <button id="zoomOut">
+
+                    <i class="fa-solid fa-minus"></i>
+
+                </button>
+
+
+                <button id="zoomReset">
+
+                    <i class="fa-solid fa-arrows-rotate"></i>
+
+                </button>
+
+
+                <button id="zoomIn">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="viewer-content">
+
+            <h2 id="viewerTitle"></h2>
+
+            <p id="viewerDescription"></p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
 
 <script>
 
-
-/* =========================================================
-   FORM ELEMENTS
-========================================================= */
-
-const form =
-    document.getElementById("swachhtaForm");
-
-const fileInput =
-    document.getElementById("photo");
-
-const fileName =
-    document.getElementById("fileName");
-
-const serviceTypeSelect =
-    document.getElementById("serviceType");
-
-
-/* =========================================================
+/* =====================================================
    CUSTOM DROPDOWN
-========================================================= */
+===================================================== */
 
-const customSelects = [];
+document.querySelectorAll(".custom-dropdown").forEach(dropdown => {
 
+    const selected =
+        dropdown.querySelector(".dropdown-selected");
 
-function closeAllCustomSelects() {
+    const text =
+        dropdown.querySelector(".selected-text");
 
-    customSelects.forEach(
-        ({ wrapper, trigger }) => {
-
-            wrapper.classList.remove("open");
-
-            trigger.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        }
-    );
-}
+    const options =
+        dropdown.querySelectorAll(".dropdown-option");
 
 
-document
-    .querySelectorAll(".custom-select-wrap")
-    .forEach(wrapper => {
+    selected.addEventListener("click", function(e){
+
+        e.stopPropagation();
 
 
-        const select =
-            wrapper.querySelector(
-                ".custom-select-native"
-            );
+        document
+            .querySelectorAll(".custom-dropdown")
+            .forEach(other => {
 
-        const trigger =
-            wrapper.querySelector(
-                ".custom-select-trigger"
-            );
+                if(other !== dropdown){
 
-        const valueBox =
-            wrapper.querySelector(
-                ".custom-select-value"
-            );
-
-        const menu =
-            wrapper.querySelector(
-                ".custom-select-menu"
-            );
-
-
-        /* Create options */
-
-        [...select.options].forEach(option => {
-
-
-            const item =
-                document.createElement("div");
-
-
-            item.className =
-                "custom-select-option";
-
-
-            item.setAttribute(
-                "role",
-                "option"
-            );
-
-
-            item.dataset.value =
-                option.value;
-
-
-            item.textContent =
-                option.textContent;
-
-
-            item.addEventListener(
-                "click",
-                () => {
-
-                    select.value =
-                        option.value;
-
-
-                    select.dispatchEvent(
-                        new Event(
-                            "change",
-                            {
-                                bubbles: true
-                            }
-                        )
-                    );
-
-
-                    closeAllCustomSelects();
+                    other.classList.remove("active");
 
                 }
-            );
+
+            });
 
 
-            menu.appendChild(item);
+        dropdown.classList.toggle("active");
+
+    });
+
+
+    options.forEach(option => {
+
+        option.addEventListener("click", function(e){
+
+            e.stopPropagation();
+
+
+            text.textContent =
+                this.textContent.trim();
+
+
+            options.forEach(item => {
+
+                item.classList.remove("selected");
+
+            });
+
+
+            this.classList.add("selected");
+
+
+            dropdown.classList.remove("active");
 
         });
 
+    });
 
-        /* Update selected option */
-
-        function updateCustomSelect() {
-
-            const selected =
-                select.options[
-                    select.selectedIndex
-                ];
+});
 
 
-            valueBox.textContent =
-                selected
-                    ? selected.textContent
-                    : "";
+/* CLICK OUTSIDE */
+
+document.addEventListener("click", function(){
+
+    document
+        .querySelectorAll(".custom-dropdown")
+        .forEach(dropdown => {
+
+            dropdown.classList.remove("active");
+
+        });
+
+});
 
 
-            menu
-                .querySelectorAll(
-                    ".custom-select-option"
-                )
-                .forEach(item => {
+/* =====================================================
+   SERVICE VIEWER
+===================================================== */
 
-                    item.classList.toggle(
-                        "selected",
-                        item.dataset.value ===
-                        select.value
-                    );
+document.addEventListener("DOMContentLoaded", function(){
+
+
+    const cards =
+        document.querySelectorAll(".service-card");
+
+
+    const viewer =
+        document.getElementById("serviceViewer");
+
+
+    const viewerImage =
+        document.getElementById("viewerImage");
+
+
+    const viewerTitle =
+        document.getElementById("viewerTitle");
+
+
+    const viewerDescription =
+        document.getElementById("viewerDescription");
+
+
+    const closeBtn =
+        document.getElementById("viewerClose");
+
+
+    const zoomIn =
+        document.getElementById("zoomIn");
+
+
+    const zoomOut =
+        document.getElementById("zoomOut");
+
+
+    const zoomReset =
+        document.getElementById("zoomReset");
+
+
+    let zoomLevel = 1;
+
+
+    /* =================================================
+       CARD CLICK
+    ================================================= */
+
+    cards.forEach(card => {
+
+        card.addEventListener("click", function(){
+
+
+            document
+                .querySelectorAll(".service-card")
+                .forEach(c => {
+
+                    c.classList.remove("active");
 
                 });
 
-        }
+
+            card.classList.add("active");
 
 
-        /* Open / close */
-
-        trigger.addEventListener(
-            "click",
-            () => {
+            const image =
+                card.querySelector(".service-image img");
 
 
-                const wasOpen =
-                    wrapper.classList.contains(
-                        "open"
-                    );
+            const title =
+                card.querySelector(".service-content h3");
 
 
-                closeAllCustomSelects();
+            const description =
+                card.querySelector(".service-content p");
 
 
-                if (!wasOpen) {
+            if(image){
 
-                    wrapper.classList.add(
-                        "open"
-                    );
-
-
-                    trigger.setAttribute(
-                        "aria-expanded",
-                        "true"
-                    );
-
-                }
+                viewerImage.src =
+                    image.src;
 
             }
-        );
 
 
-        select.addEventListener(
-            "change",
-            updateCustomSelect
-        );
+            if(title){
+
+                viewerTitle.textContent =
+                    title.textContent.trim();
+
+            }
 
 
-        updateCustomSelect();
+            if(description){
+
+                viewerDescription.textContent =
+                    description.textContent.trim();
+
+            }
 
 
-        customSelects.push({
-            wrapper,
-            trigger
+            zoomLevel = 1;
+
+            viewerImage.style.transform =
+                "scale(1)";
+
+
+            viewer.classList.add("show");
+
+            document.body.style.overflow =
+                "hidden";
+
         });
 
     });
 
 
-/* =========================================================
-   CLOSE DROPDOWN OUTSIDE
-========================================================= */
+    /* =================================================
+       CLOSE
+    ================================================= */
 
-document.addEventListener(
-    "click",
-    event => {
+    function closeViewer(){
 
-        if (
-            !event.target.closest(
-                ".custom-select-wrap"
-            )
-        ) {
+        viewer.classList.remove("show");
 
-            closeAllCustomSelects();
+        document.body.style.overflow = "";
 
-        }
+        zoomLevel = 1;
+
+        viewerImage.style.transform =
+            "scale(1)";
+
+
+        document
+            .querySelectorAll(".service-card")
+            .forEach(card => {
+
+                card.classList.remove("active");
+
+            });
 
     }
-);
 
 
-/* =========================================================
-   SERVICE CARD -> FORM
-========================================================= */
-
-document
-    .querySelectorAll(".service-card")
-    .forEach(card => {
+    closeBtn.addEventListener(
+        "click",
+        closeViewer
+    );
 
 
-        card.addEventListener(
-            "click",
-            () => {
+    /* CLICK OUTSIDE */
 
+    viewer.addEventListener("click", function(e){
 
-                const selectedService =
-                    card.dataset.problem;
+        if(e.target === viewer){
 
+            closeViewer();
 
-                if (selectedService) {
-
-
-                    const option =
-                        [
-                            ...serviceTypeSelect.options
-                        ]
-                        .find(
-                            option =>
-                                option.textContent.trim() ===
-                                selectedService
-                        );
-
-
-                    if (option) {
-
-                        serviceTypeSelect.value =
-                            option.value;
-
-
-                        serviceTypeSelect.dispatchEvent(
-                            new Event(
-                                "change",
-                                {
-                                    bubbles: true
-                                }
-                            )
-                        );
-
-                    }
-
-                }
-
-            }
-        );
+        }
 
     });
 
 
-/* =========================================================
-   FILE UPLOAD
-========================================================= */
+    /* =================================================
+       ZOOM IN
+    ================================================= */
 
-fileInput.addEventListener(
-    "change",
-    () => {
+    zoomIn.addEventListener("click", function(e){
+
+        e.stopPropagation();
+
+        zoomLevel += .25;
 
 
-        fileName.textContent = "";
+        if(zoomLevel > 3){
 
+            zoomLevel = 3;
 
-        if (!fileInput.files.length) {
-            return;
         }
 
 
-        const file =
-            fileInput.files[0];
+        viewerImage.style.transform =
+            `scale(${zoomLevel})`;
+
+    });
 
 
-        const allowed = [
-            "image/jpeg",
-            "image/png"
-        ];
+    /* =================================================
+       ZOOM OUT
+    ================================================= */
+
+    zoomOut.addEventListener("click", function(e){
+
+        e.stopPropagation();
+
+        zoomLevel -= .25;
 
 
-        /* File type */
+        if(zoomLevel < 1){
 
-        if (!allowed.includes(file.type)) {
+            zoomLevel = 1;
 
-            alert(
-                "कृपया JPG, JPEG किंवा PNG फाईल निवडा."
-            );
-
-
-            fileInput.value = "";
-
-            return;
         }
 
 
-        /* File size */
+        viewerImage.style.transform =
+            `scale(${zoomLevel})`;
 
-        if (
-            file.size >
-            2 * 1024 * 1024
-        ) {
-
-            alert(
-                "फाईलचा आकार 2 MB पेक्षा कमी असावा."
-            );
+    });
 
 
-            fileInput.value = "";
+    /* =================================================
+       RESET
+    ================================================= */
 
-            return;
+    zoomReset.addEventListener("click", function(e){
+
+        e.stopPropagation();
+
+        zoomLevel = 1;
+
+        viewerImage.style.transform =
+            "scale(1)";
+
+    });
+
+
+    /* =================================================
+       ESC
+    ================================================= */
+
+    document.addEventListener("keydown", function(e){
+
+        if(e.key === "Escape"){
+
+            closeViewer();
+
         }
 
+    });
 
-        fileName.textContent =
-            file.name;
-
-    }
-);
-
-
-/* =========================================================
-   FORM RESET
-========================================================= */
-
-form.addEventListener(
-    "reset",
-    () => {
-
-        setTimeout(
-            () => {
-
-                fileName.textContent = "";
-
-            },
-            0
-        );
-
-    }
-);
-
-
-/* =========================================================
-   FORM SUBMIT
-========================================================= */
-
-form.addEventListener(
-    "submit",
-    event => {
-
-        if (!form.checkValidity()) {
-            return;
-        }
-
-        /*
-            इथे PHP / backend endpoint जोडू शकतेस.
-
-            उदाहरण:
-
-            action="submit_swachhta.php"
-        */
-
-    }
-);
+});
 
 </script>
 
@@ -2613,4 +3055,5 @@ form.addEventListener(
 
 
 </body>
+
 </html>
