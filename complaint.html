@@ -2,1586 +2,1719 @@
 <html lang="mr">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="बुलढाणा नगर परिषद - तक्रार नोंदणी सेवा">
+    <title>मालमत्ता कर | चिखली नगर परिषद</title>
 
-    <title>तक्रार नोंदवा | बुलढाणा नगर परिषद</title>
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
+    <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<style>
+    <style>
+        /* ================================================
+           RESET
+        ================================================ */
 
-/* =========================================================
-   ORANGE GOVERNMENT THEME
-========================================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-:root {
-    --orange: #f26b18;
-    --orange-dark: #d9570b;
-    --orange-deep: #b94300;
-    --orange-light: #fff1e7;
-    --orange-soft: #fff8f3;
+        html {
+            scroll-behavior: smooth;
+        }
 
-    --text: #3d2b22;
-    --muted: #75665e;
+        body {
+            font-family: "Noto Sans Devanagari", "Segoe UI", "Poppins", sans-serif;
+            min-height: 100vh;
+            color: #2c1a0e;
+            background: #fdf8f4;
+        }
 
-    --border: #ead8cc;
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 18px 20px 40px;
+        }
 
-    --bg: #f8f5f2;
-    --white: #ffffff;
 
-    --success: #18794e;
-    --danger: #b42318;
+        /* ================================================
+           SIMPLE BACK ARROW
+        ================================================ */
 
-    --shadow: 0 6px 20px rgba(120, 55, 20, .09);
+        .back-arrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
 
-    --radius: 12px;
-}
+            width: 44px;
+            height: 44px;
 
+            margin-bottom: 18px;
 
-/* =========================================================
-   RESET
-========================================================= */
+            background: #fff;
+            color: #e8671a;
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+            border: 1.5px solid #e6d5c8;
+            border-radius: 50%;
 
-html {
-    scroll-behavior: smooth;
-}
+            font-size: 18px;
 
-body {
-    font-family: "Noto Sans Devanagari", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
+            text-decoration: none;
 
-a {
-    color: inherit;
-}
+            box-shadow: 0 3px 10px rgba(80, 38, 15, 0.06);
 
-button,
-input,
-select,
-textarea {
-    font: inherit;
-}
+            transition: all 0.25s ease;
+        }
 
+        .back-arrow:hover {
+            background: #fff4ea;
+            border-color: #e8671a;
+            transform: translateX(-3px);
+            box-shadow: 0 5px 15px rgba(80, 38, 15, 0.10);
+        }
 
-/* =========================================================
-   CARD HEADER
-========================================================= */
 
-.card-header {
-    position: sticky !important;
-    top: 0 !important;
+        /* ================================================
+           HERO / PROPERTY TAX HEADER
+        ================================================ */
 
-    width: 100% !important;
-    height: 210px !important;
+        .hero-section {
+            background: linear-gradient(145deg, #fff8f2, #fff0e4);
+            border-radius: 24px;
+            border: 1.5px solid #ebd4c2;
 
-    margin: 0 0 27px 0 !important;
+            padding: 32px 36px 28px;
+            margin-bottom: 28px;
 
-    background-image: url("images/complaint-header-clean.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+            box-shadow: 0 6px 20px rgba(80, 38, 15, 0.06);
 
-    border: 0 !important;
-    border-bottom: 4px solid var(--orange) !important;
+            position: relative;
+            overflow: hidden;
+        }
 
-    border-radius: 0 0 28px 28px;
+        .hero-section::before {
+            content: "";
 
-    overflow: hidden;
+            position: absolute;
+            right: -40px;
+            top: -40px;
 
-    z-index: 100 !important;
-}
+            width: 200px;
+            height: 200px;
 
+            background: linear-gradient(135deg, #f7b27a, #f0944a);
 
-/* =========================================================
-   BACK ARROW
-   ONLY ARROW — NO WHITE BACKGROUND
-========================================================= */
+            clip-path: circle(50%);
+            opacity: 0.08;
+        }
 
-.complaint-header {
-    position: sticky !important;
-}
+        .hero-section::after {
+            content: "";
 
-.header-back-btn {
-    position: absolute !important;
+            position: absolute;
+            left: -60px;
+            bottom: -60px;
 
-    top: 18px !important;
-    left: 20px !important;
+            width: 180px;
+            height: 180px;
 
-    width: 42px !important;
-    height: 42px !important;
+            background: linear-gradient(135deg, #e8671a, #d45a10);
 
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+            clip-path: circle(50%);
+            opacity: 0.06;
+        }
 
-    background: transparent !important;
+        .hero-content {
+            position: relative;
+            z-index: 2;
 
-    color: #e5760e !important;
+            display: flex;
+            flex-wrap: wrap;
 
-    border: none !important;
-    border-radius: 0 !important;
+            align-items: center;
+            justify-content: space-between;
 
-    text-decoration: none !important;
+            gap: 20px;
+        }
 
-    font-size: 26px !important;
+        .hero-left h2 {
+            font-size: 32px;
+            font-weight: 900;
 
-    box-shadow: none !important;
+            color: #4d2814;
 
-    z-index: 9999 !important;
+            line-height: 1.2;
+            margin-bottom: 4px;
+        }
 
-    cursor: pointer;
+        .hero-left h2 span {
+            color: #e8671a;
+        }
 
-    transition: all .25s ease;
-}
+        .hero-left p {
+            font-size: 16px;
+            color: #6f4c38;
 
-.header-back-btn:hover {
-    background: transparent !important;
+            font-weight: 500;
 
-    color: #ffe1cc !important;
+            margin-bottom: 8px;
+        }
 
-    transform: translateX(-4px);
-}
+        .hero-left .badge-list {
+            display: flex;
+            flex-wrap: wrap;
 
-.header-back-btn:active {
-    background: transparent !important;
+            gap: 12px 20px;
+            margin-top: 6px;
+        }
 
-    transform: translateX(-2px) scale(.92);
-}
+        .hero-left .badge-list .b-item {
+            display: flex;
+            align-items: center;
 
-.header-back-btn i {
-    pointer-events: none;
-}
+            gap: 6px;
 
+            font-size: 13px;
+            font-weight: 600;
 
-/* =========================================================
-   SECTION
-========================================================= */
+            color: #5a3d2e;
 
-.section {
-    background: var(--white);
+            background: rgba(255, 255, 255, 0.7);
 
-    border: 1px solid var(--border);
+            padding: 4px 14px 4px 10px;
 
-    border-radius: 24px;
+            border-radius: 30px;
 
-    box-shadow: var(--shadow);
+            border: 1px solid #f0d5c0;
+        }
 
-    margin: 0 10px 22px;
+        .hero-left .badge-list .b-item i {
+            color: #e8671a;
+            font-size: 14px;
+        }
 
-    overflow: hidden;
-}
 
-
-/* =========================================================
-   SECTION HEADER
-========================================================= */
-
-.section-head {
-    display: flex;
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 18px 22px;
-
-    border-bottom: 1px solid var(--border);
-
-    background:
-        linear-gradient(
-            90deg,
-            #fff7f1 0%,
-            #ffffff 70%
-        );
-}
-
-.section-head i {
-    width: 40px;
-    height: 40px;
-
-    display: grid;
-    place-items: center;
-
-    background: var(--orange-light);
-
-    color: var(--orange);
-
-    border: 1px solid #f4cbb2;
-
-    border-radius: 9px;
-
-    flex-shrink: 0;
-}
-
-.section-head h3 {
-    color: var(--orange-deep);
-
-    font-size: 20px;
-
-    font-weight: 800;
-}
-
-.section-head p {
-    margin-left: auto;
-
-    color: var(--muted);
-
-    font-size: 12px;
-}
-
-
-/* =========================================================
-   FORM
-========================================================= */
-
-.form-body {
-    padding: 22px;
-}
-
-
-/* =========================================================
-   NOTICE
-========================================================= */
-
-.notice {
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 10px;
-
-    padding: 13px 15px;
-
-    margin-bottom: 20px;
-
-    background: #fff8f3;
-
-    border: 1px solid #efd8ca;
-
-    border-left: 4px solid var(--orange);
-
-    color: #66544b;
-
-    font-size: 13px;
-
-    border-radius: 7px;
-}
-
-.notice i {
-    color: var(--orange);
-
-    margin-top: 4px;
-}
-
-
-/* =========================================================
-   FORM GRID
-========================================================= */
-
-.form-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 18px 20px;
-}
-
-.form-group {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 6px;
-}
-
-.full-width {
-    grid-column: 1 / -1;
-}
-
-.form-group label {
-    color: #5b2d18;
-
-    font-size: 13px;
-
-    font-weight: 700;
-}
-
-.required {
-    color: var(--danger);
-}
-
-
-/* =========================================================
-   INPUTS
-========================================================= */
-
-.field-control {
-    width: 100%;
-
-    min-height: 48px;
-
-    padding: 10px 13px;
-
-    border: 1px solid #dcc8bb;
-
-    border-radius: 8px;
-
-    background: #ffffff;
-
-    color: var(--text);
-
-    outline: none;
-
-    transition: .2s ease;
-}
-
-.field-control::placeholder {
-    color: #a4948b;
-}
-
-.field-control:hover {
-    border-color: #d5a98c;
-}
-
-.field-control:focus {
-    border-color: var(--orange);
-
-    box-shadow:
-        0 0 0 3px rgba(242,107,24,.12);
-
-    background: #fffdfb;
-}
-
-textarea.field-control {
-    min-height: 120px;
-
-    resize: vertical;
-}
-
-select.field-control {
-    cursor: pointer;
-}
-
-.help-text {
-    color: #88776d;
-
-    font-size: 11px;
-}
-
-
-/* =========================================================
-   UPLOAD
-========================================================= */
-
-.upload-box {
-    border: 1px dashed #d5b5a2;
-
-    border-radius: 9px;
-
-    background: #fffaf7;
-
-    padding: 14px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
-}
-
-.upload-info {
-    color: var(--muted);
-
-    font-size: 12px;
-}
-
-.upload-info i {
-    color: var(--orange);
-}
-
-.file-label {
+        /* ================================================
+           PRIMARY BUTTON
+        ================================================ */
+.hero-right .btn-primary {
     display: inline-flex;
-
     align-items: center;
-
-    gap: 7px;
-
-    padding: 8px 14px;
-
-    border: 1px solid #e3bda4;
-
-    border-radius: 7px;
-
-    background: #fff;
-
-    color: var(--orange-dark);
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    cursor: pointer;
-
-    transition: .2s ease;
-}
-
-.file-label:hover {
-    background: var(--orange-light);
-
-    border-color: var(--orange);
-}
-
-
-/* =========================================================
-   FORM BUTTONS
-========================================================= */
-
-.form-actions {
-    grid-column: 1 / -1;
-
-    display: flex;
-
-    gap: 10px;
-
-    padding-top: 18px;
-
-    border-top: 1px solid var(--border);
-
-    margin-top: 2px;
-}
-
-.btn {
-    min-height: 46px;
-
-    padding: 10px 20px;
-
-    border-radius: 8px;
-
-    font-size: 14px;
-
-    font-weight: 800;
-
-    cursor: pointer;
-
-    transition: .2s ease;
-}
-
-.btn-primary {
-    border: 1px solid var(--orange);
-
-    background: var(--orange);
-
-    color: #ffffff;
-
-    box-shadow:
-        0 4px 12px rgba(242,107,24,.16);
-}
-
-.btn-primary:hover {
-    background: var(--orange-dark);
-
-    border-color: var(--orange-dark);
-
-    transform: translateY(-1px);
-
-    box-shadow:
-        0 6px 18px rgba(242,107,24,.22);
-}
-
-.btn-secondary {
-    border: 1px solid #d7c8bf;
-
-    background: #ffffff;
-
-    color: #66564d;
-}
-
-.btn-secondary:hover {
-    background: #fff5ee;
-
-    border-color: #e3b89d;
-
-    color: var(--orange-dark);
-}
-
-
-/* =========================================================
-   BENEFITS
-========================================================= */
-
-.benefits {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 14px;
-
-    padding: 18px;
-}
-
-.benefit {
-    padding: 16px;
-
-    border: 1px solid #ead8cc;
-
-    border-radius: 10px;
-
-    background: #fffaf7;
-
-    display: flex;
+    justify-content: center;
 
     gap: 12px;
 
-    align-items: flex-start;
-}
+    background: linear-gradient(145deg, #e8671a, #d45a10);
+    color: #fff;
 
-.benefit-icon {
-    width: 38px;
-    height: 38px;
+    border: 0;
 
-    flex: 0 0 auto;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 8px;
-
-    background: var(--orange-light);
-
-    color: var(--orange);
-
-    border: 1px solid #f2cdb7;
-}
-
-.benefit h4 {
-    color: var(--orange-deep);
-
-    font-size: 14px;
-
-    font-weight: 800;
-
-    margin-bottom: 2px;
-}
-
-.benefit p {
-    color: var(--muted);
-
-    font-size: 11px;
-}
-
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact {
-    padding: 22px;
-}
-
-.contact-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 12px;
-}
-
-.contact-item {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 13px;
-
-    border: 1px solid #ead8cc;
-
-    border-radius: 8px;
-
-    background: #fffaf7;
-}
-
-.contact-item i {
-    width: 34px;
-    height: 34px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 7px;
-
-    background: var(--orange-light);
-
-    color: var(--orange);
-}
-
-.contact-item strong {
-    display: block;
-
-    color: var(--orange-deep);
-
-    font-size: 12px;
-}
-
-.contact-item span {
-    display: block;
-
-    color: var(--muted);
-
-    font-size: 11px;
-
-    word-break: break-word;
-}
-
-
-/* =========================================================
-   CUSTOM DROPDOWN
-========================================================= */
-
-.custom-select-wrap {
-    position: relative;
-
-    width: 100%;
-}
-
-.custom-select-native {
-    position: absolute !important;
-
-    width: 1px !important;
-    height: 1px !important;
-
-    padding: 0 !important;
-    margin: -1px !important;
-
-    overflow: hidden !important;
-
-    clip: rect(0,0,0,0) !important;
-
-    white-space: nowrap !important;
-
-    border: 0 !important;
-}
-
-.custom-select-trigger {
-    width: 100%;
-
+    padding: 13px 34px;
     min-height: 48px;
 
-    padding: 10px 44px 10px 14px;
+    border-radius: 50px;
 
-    border: 1px solid #dcc8bb;
-
-    border-radius: 8px;
-
-    background: linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #fff8f3 100%
-    );
-
-    color: var(--text);
-
-    text-align: left;
-
-    font-family: "Noto Sans Devanagari", sans-serif;
-
-    font-size: 15px;
-
-    font-weight: 500;
-
-    cursor: pointer;
-
-    position: relative;
-
-    outline: none;
-
-    transition: .2s ease;
-}
-
-.custom-select-trigger:hover {
-    border-color: #dfa27c;
-
-    background: #fffaf7;
-}
-
-.custom-select-wrap.open .custom-select-trigger {
-    border-color: var(--orange);
-
-    box-shadow:
-        0 0 0 3px rgba(242,107,24,.12);
-
-    background: #ffffff;
-}
-
-.custom-select-arrow {
-    position: absolute;
-
-    right: 15px;
-
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    color: #9b684d;
-
-    font-size: 13px;
-
-    pointer-events: none;
-
-    transition: .25s ease;
-}
-
-.custom-select-wrap.open .custom-select-arrow {
-    transform:
-        translateY(-50%)
-        rotate(180deg);
-
-    color: var(--orange);
-}
-
-.custom-select-menu {
-    position: absolute;
-
-    z-index: 1000;
-
-    left: 0;
-    right: 0;
-
-    top: calc(100% + 7px);
-
-    max-height: 260px;
-
-    overflow-y: auto;
-
-    padding: 6px;
-
-    border: 1px solid #e5c8b7;
-
-    border-radius: 10px;
-
-    background: rgba(255,255,255,.98);
-
-    box-shadow:
-        0 14px 35px rgba(120,55,20,.15),
-        0 3px 10px rgba(120,55,20,.08);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transform:
-        translateY(-8px)
-        scale(.98);
-
-    transform-origin: top center;
-
-    transition:
-        opacity .2s ease,
-        transform .22s ease,
-        visibility .22s;
-
-    backdrop-filter: blur(8px);
-}
-
-.custom-select-wrap.open .custom-select-menu {
-    opacity: 1;
-
-    visibility: visible;
-
-    transform:
-        translateY(0)
-        scale(1);
-}
-
-.custom-select-option {
-    min-height: 40px;
-
-    display: flex;
-
-    align-items: center;
-
-    padding: 8px 11px;
-
-    border-radius: 7px;
-
-    color: #5b321f;
-
-    font-family: "Noto Sans Devanagari", sans-serif;
-
-    font-size: 15px;
-
-    font-weight: 500;
-
-    cursor: pointer;
-
-    transition: .15s ease;
-}
-
-.custom-select-option:hover {
-    background: var(--orange-light);
-
-    color: var(--orange-dark);
-
-    transform: translateX(2px);
-}
-
-.custom-select-option.selected {
-    background: #ffe3d1;
-
-    color: var(--orange-dark);
-
-    font-weight: 700;
-}
-
-.custom-select-option.selected::after {
-    content: "✓";
-
-    margin-left: auto;
-
+    font-size: 17px;
     font-weight: 800;
 
-    color: var(--orange);
+    cursor: pointer;
+
+    box-shadow: 0 8px 22px rgba(212, 90, 16, 0.25);
+
+    transition: 0.3s ease;
+
+    text-decoration: none;
+
+    font-family: inherit;
+
+    line-height: 1;
 }
 
-.custom-select-menu::-webkit-scrollbar {
-    width: 6px;
+/* Arrow */
+.hero-right .btn-primary i {
+    font-size: 21px;
+    line-height: 1;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+
+    transform: translateY(1px);
 }
 
-.custom-select-menu::-webkit-scrollbar-track {
-    background: #fff2e9;
+/* Hover */
+.hero-right .btn-primary:hover {
+    transform: translateY(-3px);
 
-    border-radius: 10px;
-}
-
-.custom-select-menu::-webkit-scrollbar-thumb {
-    background: #eabda0;
-
-    border-radius: 10px;
-}
-
-
-/* =========================================================
-   FOCUS
-========================================================= */
-
-:focus-visible {
-    outline: 3px solid rgba(242,107,24,.25);
-
-    outline-offset: 2px;
-}
-
-
-/* =========================================================
-   RESPONSIVE 900px
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .benefits {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
+    box-shadow: 0 12px 30px rgba(212, 90, 16, 0.35);
 }
 
 
-/* =========================================================
-   RESPONSIVE 768px
-========================================================= */
+/* MOBILE */
+@media (max-width: 600px) {
 
-@media (max-width: 768px) {
-
-    .card-header {
-        height: 165px !important;
-
-        border-radius:
-            0 0 22px 22px;
-    }
-
-    .header-back-btn {
-        top: 14px !important;
-        left: 14px !important;
-
-        width: 38px !important;
-        height: 38px !important;
-
-        font-size: 23px !important;
-    }
-}
-
-
-/* =========================================================
-   RESPONSIVE 650px
-========================================================= */
-
-@media (max-width: 650px) {
-
-    .card-header {
-        height: 145px !important;
-
-        margin-bottom: 18px !important;
-
-        border-radius:
-            0 0 18px 18px;
-    }
-
-    .header-back-btn {
-        top: 10px !important;
-        left: 10px !important;
-
-        width: 34px !important;
-        height: 34px !important;
-
-        font-size: 21px !important;
-    }
-
-    .section {
-        margin-left: 8px;
-        margin-right: 8px;
-
-        border-radius: 18px;
-    }
-
-    .section-head {
-        padding: 14px;
-    }
-
-    .section-head h3 {
-        font-size: 17px;
-    }
-
-    .section-head p {
-        display: none;
-    }
-
-    .form-body {
-        padding: 14px;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr;
-
-        gap: 14px;
-    }
-
-    .full-width {
-        grid-column: auto;
-    }
-
-    .form-actions {
-        grid-column: auto;
-
-        flex-direction: column;
-    }
-
-    .btn {
+    .hero-right .btn-primary {
         width: 100%;
-    }
 
-    .benefits {
-        grid-template-columns: 1fr 1fr;
+        min-height: 46px;
 
-        padding: 12px;
+        padding: 12px 24px;
+
+        font-size: 16px;
 
         gap: 10px;
     }
 
-    .benefit {
-        padding: 12px;
-
-        gap: 8px;
-    }
-
-    .contact {
-        padding: 14px;
-    }
-
-    .custom-select-menu {
-        max-height: 220px;
-    }
-
-    .custom-select-option {
-        font-size: 14px;
-
-        min-height: 42px;
+    .hero-right .btn-primary i {
+        font-size: 20px;
     }
 }
+       
 
 
-/* =========================================================
-   RESPONSIVE 480px
-========================================================= */
+        /* ================================================
+           QUICK ACTION CARDS
+        ================================================ */
 
-@media (max-width: 480px) {
+        .action-grid {
+            display: grid;
 
-    .card-header {
-        height: 132px !important;
-    }
+            grid-template-columns: repeat(4, 1fr);
 
-    .header-back-btn {
-        top: 9px !important;
-        left: 9px !important;
+            gap: 16px;
 
-        width: 32px !important;
-        height: 32px !important;
+            margin-bottom: 30px;
+        }
 
-        font-size: 20px !important;
-    }
+        .action-card {
+            background: #fff;
 
-    .benefits {
-        grid-template-columns: 1fr 1fr;
-    }
-}
+            border-radius: 18px;
+
+            border: 1.5px solid #e9d9cd;
+
+            padding: 22px 16px 18px;
+
+            text-align: center;
+
+            transition: 0.3s ease;
+
+            cursor: pointer;
+
+            box-shadow: 0 4px 12px rgba(80, 38, 15, 0.04);
+
+            text-decoration: none;
+
+            color: inherit;
+
+            display: block;
+        }
+
+        .action-card:hover {
+            transform: translateY(-5px);
+
+            border-color: #e8a072;
+
+            box-shadow: 0 10px 28px rgba(80, 38, 15, 0.08);
+        }
+
+        .action-card .ac-icon {
+            width: 56px;
+            height: 56px;
+
+            margin: 0 auto 10px;
+
+            border-radius: 16px;
+
+            background: linear-gradient(145deg, #fff4ea, #fde8d6);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 24px;
+
+            color: #e8671a;
+
+            border: 1px solid #f0c8ae;
+
+            transition: 0.3s ease;
+        }
+
+        .action-card:hover .ac-icon {
+            background: linear-gradient(145deg, #e8671a, #d45a10);
+
+            color: #fff;
+
+            border-color: #d45a10;
+        }
+
+        .action-card h4 {
+            font-size: 15px;
+
+            font-weight: 800;
+
+            color: #3d2417;
+
+            margin-bottom: 3px;
+        }
+
+        .action-card p {
+            font-size: 12px;
+
+            color: #8a7162;
+
+            font-weight: 500;
+        }
 
 
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
+        /* ================================================
+           FORM SECTION
+        ================================================ */
 
-@media (max-width: 390px) {
+        .form-section {
+            background: #fff;
 
-    .benefits {
-        grid-template-columns: 1fr;
-    }
-}
+            border-radius: 24px;
+
+            border: 1.5px solid #ebd4c2;
+
+            padding: 28px 32px 32px;
+
+            margin-bottom: 28px;
+
+            box-shadow: 0 6px 20px rgba(80, 38, 15, 0.05);
+        }
+
+        .form-section .section-title {
+            font-size: 22px;
+
+            font-weight: 900;
+
+            color: #4d2814;
+
+            margin-bottom: 20px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+        }
+
+        .form-section .section-title i {
+            color: #e8671a;
+
+            font-size: 24px;
+        }
+
+        .form-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px 28px;
+        }
+
+        .form-group {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 5px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+
+            font-weight: 700;
+
+            color: #3d2417;
+
+            display: flex;
+            align-items: center;
+
+            gap: 4px;
+        }
+
+        .form-group label .required {
+            color: #d42a1a;
+
+            font-size: 16px;
+        }
 
 
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
+        /* ================================================
+           INPUTS
+        ================================================ */
 
-@media (prefers-reduced-motion: reduce) {
+        .form-group input {
+            width: 100%;
 
-    html {
-        scroll-behavior: auto;
-    }
+            height: 50px;
 
-    *,
-    *::before,
-    *::after {
-        animation-duration: .01ms !important;
+            padding: 0 16px;
 
-        animation-iteration-count: 1 !important;
+            border: 1.5px solid #e6d5c8;
 
-        transition-duration: .01ms !important;
-    }
-}
+            border-radius: 10px;
 
-</style>
+            background: #fff;
+
+            color: #3d2417;
+
+            font-family: "Noto Sans Devanagari", "Segoe UI", sans-serif;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            outline: none;
+
+            transition: all 0.2s ease;
+        }
+
+        .form-group input::placeholder {
+            color: #a28f82;
+
+            font-weight: 500;
+        }
+
+        .form-group input:hover {
+            border-color: #e8671a;
+
+            background: #fffaf5;
+        }
+
+        .form-group input:focus {
+            border-color: #e8671a;
+
+            background: #fff;
+
+            box-shadow:
+                0 0 0 3px rgba(232, 103, 26, 0.10);
+        }
 
 
+        /* ================================================
+           CUSTOM WARD DROPDOWN
+        ================================================ */
 
+        .custom-dropdown {
+            position: relative;
+
+            width: 100%;
+        }
+
+        .dropdown-btn {
+            width: 100%;
+
+            height: 50px;
+
+            padding: 0 16px;
+
+            background: #fff;
+
+            border: 1.5px solid #e6d5c8;
+
+            border-radius: 10px;
+
+            color: #3d2417;
+
+            font-family: "Noto Sans Devanagari", "Segoe UI", sans-serif;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            cursor: pointer;
+
+            outline: none;
+
+            transition: all 0.25s ease;
+        }
+
+        .dropdown-btn:hover {
+            border-color: #e8671a;
+
+            background: #fffaf5;
+        }
+
+        .custom-dropdown.active .dropdown-btn {
+            border-color: #e8671a;
+
+            box-shadow:
+                0 0 0 3px rgba(232, 103, 26, 0.10);
+        }
+
+        .dropdown-btn i {
+            color: #e8671a;
+
+            font-size: 13px;
+
+            transition: transform 0.25s ease;
+        }
+
+        .custom-dropdown.active .dropdown-btn i {
+            transform: rotate(180deg);
+        }
+
+
+        /* OPTIONS BOX */
+
+        .dropdown-options {
+            position: absolute;
+
+            top: calc(100% + 7px);
+
+            left: 0;
+
+            width: 100%;
+
+            background: #fff;
+
+            border: 1.5px solid #ead8ca;
+
+            border-radius: 12px;
+
+            padding: 6px;
+
+            box-shadow:
+                0 10px 30px rgba(80, 38, 15, 0.13);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateY(-8px);
+
+            transition:
+                opacity 0.2s ease,
+                transform 0.2s ease,
+                visibility 0.2s ease;
+
+            z-index: 999;
+        }
+
+        .custom-dropdown.active .dropdown-options {
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+        }
+
+        .dropdown-option {
+            padding: 11px 14px;
+
+            border-radius: 8px;
+
+            color: #4d2814;
+
+            font-family: "Noto Sans Devanagari", "Segoe UI", sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: all 0.18s ease;
+        }
+
+        .dropdown-option:hover {
+            background: #fff1e5;
+
+            color: #e8671a;
+
+            padding-left: 18px;
+        }
+
+        .dropdown-option.selected {
+            background: #fff1e5;
+
+            color: #e8671a;
+        }
+
+
+        /* ================================================
+           FORM BUTTONS
+        ================================================ */
+
+        .form-actions {
+            grid-column: 1 / -1;
+
+            display: flex;
+
+            gap: 14px;
+
+            margin-top: 6px;
+
+            flex-wrap: wrap;
+        }
+
+        .form-actions .btn-submit {
+            padding: 14px 40px;
+
+            background: linear-gradient(145deg, #e8671a, #d45a10);
+
+            color: #fff;
+
+            border: 0;
+
+            border-radius: 50px;
+
+            font-size: 17px;
+
+            font-weight: 800;
+
+            font-family: inherit;
+
+            cursor: pointer;
+
+            box-shadow: 0 8px 20px rgba(212, 90, 16, 0.20);
+
+            transition: 0.3s ease;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+        .form-actions .btn-submit:hover {
+            transform: translateY(-3px);
+
+            box-shadow: 0 12px 28px rgba(212, 90, 16, 0.30);
+        }
+
+        .form-actions .btn-reset {
+            padding: 14px 30px;
+
+            background: #fff;
+
+            color: #6f4c38;
+
+            border: 1.8px solid #e6d5c8;
+
+            border-radius: 50px;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            font-family: inherit;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+        }
+
+        .form-actions .btn-reset:hover {
+            background: #f5ede7;
+
+            border-color: #c9b4a6;
+        }
+
+
+        /* ================================================
+           BENEFITS
+        ================================================ */
+
+        .benefits-section {
+            background: #fffcf9;
+
+            border-radius: 24px;
+
+            border: 1.5px solid #ebd4c2;
+
+            padding: 28px 32px 32px;
+
+            margin-bottom: 28px;
+
+            box-shadow: 0 6px 20px rgba(80, 38, 15, 0.05);
+        }
+
+        .benefits-section .section-title {
+            font-size: 22px;
+
+            font-weight: 900;
+
+            color: #4d2814;
+
+            margin-bottom: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .benefits-section .section-title i {
+            color: #e8671a;
+
+            font-size: 26px;
+        }
+
+        .benefits-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 16px;
+        }
+
+        .benefit-item {
+            background: #fff;
+
+            border-radius: 16px;
+
+            border: 1.5px solid #e9d9cd;
+
+            padding: 20px 14px 16px;
+
+            text-align: center;
+
+            transition: 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-4px);
+
+            border-color: #e8a072;
+
+            box-shadow: 0 8px 22px rgba(80, 38, 15, 0.06);
+        }
+
+        .benefit-item .bi-icon {
+            width: 48px;
+
+            height: 48px;
+
+            margin: 0 auto 10px;
+
+            border-radius: 14px;
+
+            background: #fff4ea;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 22px;
+
+            color: #e8671a;
+
+            border: 1px solid #f0c8ae;
+        }
+
+        .benefit-item:nth-child(2) .bi-icon {
+            background: #eaf7ea;
+
+            color: #2f8a46;
+
+            border-color: #b8dbb8;
+        }
+
+        .benefit-item:nth-child(3) .bi-icon {
+            background: #eaf0fb;
+
+            color: #2f6fc9;
+
+            border-color: #c0d4ed;
+        }
+
+        .benefit-item:nth-child(4) .bi-icon {
+            background: #f3eafb;
+
+            color: #7f47b0;
+
+            border-color: #d8c5e8;
+        }
+
+        .benefit-item h4 {
+            font-size: 14px;
+
+            font-weight: 800;
+
+            color: #3d2417;
+
+            margin-bottom: 4px;
+        }
+
+        .benefit-item p {
+            font-size: 12px;
+
+            color: #7a6559;
+
+            font-weight: 500;
+
+            line-height: 1.5;
+        }
+
+
+        /* ================================================
+           CONTACT
+        ================================================ */
+
+        .contact-section {
+            background: linear-gradient(145deg, #fff8f2, #fdf1e8);
+
+            border-radius: 24px;
+
+            border: 1.5px solid #ebd4c2;
+
+            padding: 28px 32px 26px;
+
+            text-align: center;
+
+            box-shadow: 0 6px 20px rgba(80, 38, 15, 0.05);
+        }
+
+        .contact-section .section-title {
+            font-size: 22px;
+
+            font-weight: 900;
+
+            color: #4d2814;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-bottom: 8px;
+        }
+
+        .contact-section .section-title i {
+            color: #e8671a;
+
+            font-size: 26px;
+        }
+
+        .contact-section p {
+            font-size: 15px;
+
+            color: #6f4c38;
+
+            font-weight: 500;
+        }
+
+        .contact-section .contact-info {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 20px 40px;
+
+            margin-top: 12px;
+        }
+
+        .contact-section .contact-info .ci-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            color: #3d2417;
+        }
+
+        .contact-section .contact-info .ci-item i {
+            color: #e8671a;
+
+            font-size: 18px;
+        }
+
+
+        /* ================================================
+           TABLET
+        ================================================ */
+
+        @media (max-width: 820px) {
+
+            .gov-title h1 {
+                font-size: 22px;
+            }
+
+            .hero-left h2 {
+                font-size: 26px;
+            }
+
+            .action-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-content {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .hero-right {
+                width: 100%;
+            }
+
+            .hero-right .btn-primary {
+                width: 100%;
+
+                justify-content: center;
+            }
+        }
+
+
+        /* ================================================
+           MOBILE
+        ================================================ */
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 12px 14px 30px;
+            }
+
+            .back-arrow {
+                width: 38px;
+
+                height: 38px;
+
+                margin-bottom: 14px;
+
+                font-size: 16px;
+            }
+
+            .hero-section {
+                padding: 20px 18px 18px;
+            }
+
+            .hero-left h2 {
+                font-size: 22px;
+            }
+
+            .hero-left p {
+                font-size: 14px;
+            }
+
+            .hero-left .badge-list .b-item {
+                font-size: 11px;
+
+                padding: 3px 12px 3px 8px;
+            }
+
+            .hero-right .btn-primary {
+                font-size: 16px;
+
+                padding: 12px 24px;
+
+                width: 100%;
+
+                justify-content: center;
+            }
+
+            .action-grid {
+                grid-template-columns: 1fr 1fr;
+
+                gap: 10px;
+            }
+
+            .action-card {
+                padding: 16px 10px 14px;
+            }
+
+            .action-card .ac-icon {
+                width: 44px;
+
+                height: 44px;
+
+                font-size: 20px;
+            }
+
+            .action-card h4 {
+                font-size: 13px;
+            }
+
+            .action-card p {
+                font-size: 11px;
+            }
+
+            .form-section {
+                padding: 18px 16px 22px;
+            }
+
+            .form-section .section-title {
+                font-size: 18px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+
+                gap: 14px;
+            }
+
+            .form-group label {
+                font-size: 13px;
+            }
+
+            .form-group input {
+                height: 46px;
+
+                padding: 0 14px;
+
+                font-size: 14px;
+
+                border-radius: 10px;
+            }
+
+            .dropdown-btn {
+                height: 46px;
+
+                font-size: 14px;
+
+                padding: 0 14px;
+
+                border-radius: 10px;
+            }
+
+            .dropdown-option {
+                padding: 10px 12px;
+
+                font-size: 14px;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .form-actions .btn-submit,
+            .form-actions .btn-reset {
+                width: 100%;
+
+                justify-content: center;
+            }
+
+            .benefits-section {
+                padding: 18px 16px 22px;
+            }
+
+            .benefits-section .section-title {
+                font-size: 18px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+
+                gap: 12px;
+            }
+
+            .benefit-item {
+                padding: 16px 12px;
+
+                display: flex;
+
+                align-items: center;
+
+                gap: 14px;
+
+                text-align: left;
+            }
+
+            .benefit-item .bi-icon {
+                margin: 0;
+
+                width: 40px;
+
+                height: 40px;
+
+                font-size: 18px;
+
+                flex-shrink: 0;
+            }
+
+            .benefit-item h4 {
+                font-size: 13px;
+
+                margin-bottom: 2px;
+            }
+
+            .benefit-item p {
+                font-size: 11px;
+            }
+
+            .contact-section {
+                padding: 18px 16px 20px;
+            }
+
+            .contact-section .section-title {
+                font-size: 18px;
+            }
+
+            .contact-section p {
+                font-size: 13px;
+            }
+
+            .contact-section .contact-info {
+                flex-direction: column;
+
+                gap: 8px;
+
+                align-items: center;
+            }
+
+            .contact-section .contact-info .ci-item {
+                font-size: 13px;
+            }
+        }
+
+
+        /* ================================================
+           EXTRA SMALL
+        ================================================ */
+
+        @media (max-width: 400px) {
+
+            .action-grid {
+                grid-template-columns: 1fr 1fr;
+
+                gap: 8px;
+            }
+
+            .action-card {
+                padding: 12px 8px 10px;
+            }
+
+            .action-card .ac-icon {
+                width: 38px;
+
+                height: 38px;
+
+                font-size: 17px;
+            }
+
+            .action-card h4 {
+                font-size: 12px;
+            }
+
+            .action-card p {
+                font-size: 10px;
+            }
+
+            .hero-left h2 {
+                font-size: 19px;
+            }
+        }
+
+        /* =========================================================
+           CARD HEADER - FULL WIDTH, NO MARGIN
+        ========================================================= */
+
+        .card-header {
+            position: sticky !important;
+            top: 0 !important;
+
+            width: 100% !important;
+            height: 210px !important;
+
+            margin: 0 !important;
+            padding: 0 !important;
+
+            background-image: url("images/malmatta.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+            border: 0 !important;
+            border-bottom: 4px solid #f26b18 !important;
+
+            border-radius: 0 0 28px 28px !important;
+
+            overflow: hidden;
+
+            z-index: 100 !important;
+        }
+
+
+        /* =========================================================
+           BACK ARROW
+           ONLY ARROW — NO WHITE BACKGROUND
+        ========================================================= */
+
+        .complaint-header {
+            position: sticky !important;
+        }
+
+        .header-back-btn {
+            position: absolute !important;
+
+            top: 18px !important;
+            left: 20px !important;
+
+            width: 42px !important;
+            height: 42px !important;
+
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+
+            background: transparent !important;
+
+            color: #e5760e !important;
+
+            border: none !important;
+            border-radius: 0 !important;
+
+            text-decoration: none !important;
+
+            font-size: 26px !important;
+
+            box-shadow: none !important;
+
+            z-index: 9999 !important;
+
+            cursor: pointer;
+
+            transition: all .25s ease;
+        }
+
+        .header-back-btn:hover {
+            background: transparent !important;
+
+            color: #ffe1cc !important;
+
+            transform: translateX(-4px);
+        }
+
+        .header-back-btn:active {
+            background: transparent !important;
+
+            transform: translateX(-2px) scale(.92);
+        }
+
+        .header-back-btn i {
+            pointer-events: none;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE 768px
+        ========================================================= */
+
+        @media (max-width: 768px) {
+
+            .card-header {
+                height: 165px !important;
+
+                border-radius: 0 0 22px 22px !important;
+            }
+
+            .header-back-btn {
+                top: 14px !important;
+                left: 14px !important;
+
+                width: 38px !important;
+                height: 38px !important;
+
+                font-size: 23px !important;
+            }
+        }
+
+
+        /* =========================================================
+           RESPONSIVE 650px
+        ========================================================= */
+
+        @media (max-width: 650px) {
+
+            .card-header {
+                height: 145px !important;
+
+                border-radius: 0 0 18px 18px !important;
+            }
+
+            .header-back-btn {
+                top: 10px !important;
+                left: 10px !important;
+
+                width: 34px !important;
+                height: 34px !important;
+
+                font-size: 21px !important;
+            }
+        }
+
+
+        /* =========================================================
+           RESPONSIVE 480px
+        ========================================================= */
+
+        @media (max-width: 480px) {
+
+            .card-header {
+                height: 132px !important;
+            }
+
+            .header-back-btn {
+                top: 9px !important;
+                left: 9px !important;
+
+                width: 32px !important;
+                height: 32px !important;
+
+                font-size: 20px !important;
+            }
+        }
+
+
+        /* =========================================================
+           VERY SMALL MOBILE
+        ========================================================= */
+
+        @media (max-width: 390px) {
+
+            .card-header {
+                height: 125px !important;
+            }
+
+            .header-back-btn {
+                top: 8px !important;
+                left: 8px !important;
+
+                width: 30px !important;
+                height: 30px !important;
+
+                font-size: 18px !important;
+            }
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
 </head>
 
 
 <body>
 
+    <!-- ================================================
+         HEADER - FULL WIDTH (container च्या बाहेर)
+    ================================================ -->
 
-<!-- =====================================================
-     HEADER IMAGE
-===================================================== -->
+    <div class="card-header complaint-header">
 
+        <!-- BACK BUTTON -->
+        <a href="javascript:history.back();"
+           class="header-back-btn"
+           title="मागे जा"
+           aria-label="मागे जा">
 
-<div class="card-header complaint-header">
+            <i class="fa-solid fa-arrow-left"></i>
 
-    <!-- BACK BUTTON -->
-    <a href="javascript:history.back();"
-       class="header-back-btn"
-       title="मागे जा"
-       aria-label="मागे जा">
+        </a>
 
-        <i class="fa-solid fa-arrow-left"></i>
-
-    </a>
-
-</div>
+    </div>
 
 
+    <!-- ================================================
+         MAIN CONTAINER
+    ================================================ -->
 
-    <!-- =================================================
-         COMPLAINT FORM
-    ================================================= -->
+    <div class="container">
 
-    <section
-        class="section"
-        aria-labelledby="form-title">
+        <!-- ================================================
+             QUICK ACTION CARDS
+        ================================================ -->
+
+        <div class="action-grid">
+
+            <!-- CLICK → FORM -->
+
+            <a href="#tax-form" class="action-card">
+
+                <div class="ac-icon">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                </div>
+
+                <h4>कर भरणा करा</h4>
+
+                <p>
+                    मालमत्ता कर ऑनलाइन भरा
+                </p>
+
+            </a>
 
 
-        <div class="section-head">
+            <a href="#" class="action-card">
 
-            <i
-                class="fa-solid fa-pen-to-square"
-                aria-hidden="true">
-            </i>
+                <div class="ac-icon">
+                    <i class="fa-solid fa-print"></i>
+                </div>
 
-            <h3 id="form-title">
-                तक्रार अर्ज
-            </h3>
+                <h4>पावती डाउनलोड</h4>
 
-            <p>
-                <span class="required">*</span>
-                अनिवार्य माहिती
-            </p>
+                <p>
+                    भरणा केलेली पावती मिळवा
+                </p>
+
+            </a>
+
+
+            <a href="#" class="action-card">
+
+                <div class="ac-icon">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </div>
+
+                <h4>भरणा इतिहास</h4>
+
+                <p>
+                    आपला भरणा इतिहास पहा
+                </p>
+
+            </a>
+
+
+            <a href="#" class="action-card">
+
+                <div class="ac-icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                </div>
+
+                <h4>कर माहिती</h4>
+
+                <p>
+                    मालमत्ता कर बदल लागतात
+                </p>
+
+            </a>
 
         </div>
 
 
-        <div class="form-body">
+        <!-- ================================================
+             FORM SECTION
+        ================================================ -->
 
+        <div class="form-section" id="tax-form">
 
-            <!-- NOTICE -->
+            <div class="section-title">
 
-            <div class="notice">
+                <i class="fa-solid fa-pen-to-square"></i>
 
-                <i class="fa-solid fa-circle-info"></i>
-
-                <div>
-
-                    <strong>सूचना:</strong>
-
-                    कृपया अचूक माहिती भरा.
-                    चुकीची किंवा अपूर्ण माहिती दिल्यास
-                    तक्रारीच्या प्रक्रियेत विलंब होऊ शकतो.
-
-                </div>
+                मालमत्ता तपशील भरा
 
             </div>
 
 
-
-            <!-- FORM -->
-
-            <form
-                id="complaintForm"
-                action="save_complaint.php"
-                method="post"
-                enctype="multipart/form-data">
-
+            <form>
 
                 <div class="form-grid">
 
 
-                    <!-- MOBILE -->
+                    <!-- मालमत्ता क्रमांक -->
 
                     <div class="form-group">
 
-                        <label for="mobile">
-
-                            मोबाईल क्रमांक
-
+                        <label>
+                            मालमत्ता क्रमांक
                             <span class="required">*</span>
-
                         </label>
 
                         <input
-                            class="field-control"
-                            id="mobile"
-                            name="mobile"
-                            type="tel"
-                            placeholder="१० अंकी मोबाईल क्रमांक"
-                            inputmode="numeric"
-                            autocomplete="tel"
-                            pattern="[6-9][0-9]{9}"
-                            maxlength="10"
-                            required>
-
-                        <span class="help-text">
-                            उदा. 9876543210
-                        </span>
-
-                    </div>
-
-
-
-                    <!-- NAME -->
-
-                    <div class="form-group">
-
-                        <label for="name">
-
-                            अर्जदाराचे पूर्ण नाव
-
-                            <span class="required">*</span>
-
-                        </label>
-
-                        <input
-                            class="field-control"
-                            id="name"
-                            name="name"
                             type="text"
-                            placeholder="पूर्ण नाव प्रविष्ट करा"
-                            autocomplete="name"
-                            minlength="2"
-                            maxlength="100"
-                            required>
+                            name="property_number"
+                            placeholder="मालमत्ता क्रमांक प्रविष्ट करा"
+                            required
+                        >
 
                     </div>
 
 
+                    <!-- धारकाचे नाव -->
 
-                    <!-- COMPLAINT TYPE -->
+                    <div class="form-group">
 
-                    <div class="form-group full-width">
-
-                        <label for="complaintType">
-
-                            तक्रारीचा प्रकार
-
+                        <label>
+                            धारकाचे नाव
                             <span class="required">*</span>
+                        </label>
 
+                        <input
+                            type="text"
+                            name="owner_name"
+                            placeholder="धारकाचे नाव प्रविष्ट करा"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- प्रभाग -->
+
+                    <div class="form-group">
+
+                        <label>
+                            प्रभाग निवडा
+                            <span class="required">*</span>
                         </label>
 
 
-                        <div class="custom-select-wrap">
-
-
-                            <select
-                                class="field-control custom-select-native"
-                                id="complaintType"
-                                name="complaintType"
-                                required>
-
-                                <option value="">
-                                    तक्रारीचा प्रकार निवडा
-                                </option>
-
-                                <option>
-                                    स्वच्छता आणि कचरा व्यवस्थापन
-                                </option>
-
-                                <option>
-                                    पाणीपुरवठा समस्या
-                                </option>
-
-                                <option>
-                                    रस्ते आणि पायाभूत सुविधा
-                                </option>
-
-                                <option>
-                                    वीज समस्या
-                                </option>
-
-                                <option>
-                                    आरोग्य आणि वैद्यकीय सुविधा
-                                </option>
-
-                                <option>
-                                    शैक्षणिक सुविधा
-                                </option>
-
-                                <option>
-                                    शेती संबंधित समस्या
-                                </option>
-
-                                <option>
-                                    इतर
-                                </option>
-
-                            </select>
-
+                        <div class="custom-dropdown">
 
                             <button
                                 type="button"
-                                class="custom-select-trigger"
-                                aria-haspopup="listbox"
-                                aria-expanded="false">
+                                class="dropdown-btn"
+                            >
 
-                                <span class="custom-select-value">
-                                    तक्रारीचा प्रकार निवडा
+                                <span class="selected-text">
+                                    प्रभाग निवडा
                                 </span>
 
-                                <i class="fa-solid fa-chevron-down custom-select-arrow"></i>
+                                <i class="fa-solid fa-chevron-down"></i>
 
                             </button>
 
 
-                            <div
-                                class="custom-select-menu"
-                                role="listbox">
-                            </div>
+                            <div class="dropdown-options">
 
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- DETAILS -->
-
-                    <div class="form-group full-width">
-
-                        <label for="details">
-
-                            तक्रारीचा सविस्तर तपशील
-
-                            <span class="required">*</span>
-
-                        </label>
-
-                        <textarea
-                            class="field-control"
-                            id="details"
-                            name="details"
-                            placeholder="आपली तक्रार सविस्तर लिहा..."
-                            minlength="10"
-                            maxlength="1000"
-                            required></textarea>
-
-                        <span class="help-text">
-                            कमाल १००० अक्षरे.
-                        </span>
-
-                    </div>
-
-
-
-                    <!-- LOCATION -->
-
-                    <div class="form-group full-width">
-
-                        <label for="location">
-
-                            समस्येचे ठिकाण / संपूर्ण पत्ता
-
-                            <span class="required">*</span>
-
-                        </label>
-
-                        <input
-                            class="field-control"
-                            id="location"
-                            name="location"
-                            type="text"
-                            placeholder="समस्येचे अचूक स्थान प्रविष्ट करा"
-                            maxlength="250"
-                            autocomplete="street-address"
-                            required>
-
-                    </div>
-
-
-
-                    <!-- WARD -->
-
-                    <div class="form-group">
-
-                        <label for="ward">
-
-                            प्रभाग क्रमांक
-
-                            <span class="required">*</span>
-
-                        </label>
-
-
-                        <div class="custom-select-wrap">
-
-
-                            <select
-                                class="field-control custom-select-native"
-                                id="ward"
-                                name="ward"
-                                required>
-
-                                <option value="">
-                                    प्रभाग निवडा
-                                </option>
-
-                                <option value="1">
+                                <div
+                                    class="dropdown-option"
+                                    data-value="1"
+                                >
                                     प्रभाग क्र. १
-                                </option>
+                                </div>
 
-                                <option value="2">
+
+                                <div
+                                    class="dropdown-option"
+                                    data-value="2"
+                                >
                                     प्रभाग क्र. २
-                                </option>
+                                </div>
 
-                                <option value="3">
+
+                                <div
+                                    class="dropdown-option"
+                                    data-value="3"
+                                >
                                     प्रभाग क्र. ३
-                                </option>
+                                </div>
 
-                                <option value="4">
+
+                                <div
+                                    class="dropdown-option"
+                                    data-value="4"
+                                >
                                     प्रभाग क्र. ४
-                                </option>
+                                </div>
 
-                                <option value="5">
+
+                                <div
+                                    class="dropdown-option"
+                                    data-value="5"
+                                >
                                     प्रभाग क्र. ५
-                                </option>
+                                </div>
 
-                                <option value="6">
-                                    प्रभाग क्र. ६
-                                </option>
-
-                                <option value="7">
-                                    प्रभाग क्र. ७
-                                </option>
-
-                                <option value="8">
-                                    प्रभाग क्र. ८
-                                </option>
-
-                                <option value="9">
-                                    प्रभाग क्र. ९
-                                </option>
-
-                                <option value="10">
-                                    प्रभाग क्र. १०
-                                </option>
-
-                            </select>
-
-
-                            <button
-                                type="button"
-                                class="custom-select-trigger"
-                                aria-haspopup="listbox"
-                                aria-expanded="false">
-
-                                <span class="custom-select-value">
-                                    प्रभाग निवडा
-                                </span>
-
-                                <i class="fa-solid fa-chevron-down custom-select-arrow"></i>
-
-                            </button>
-
-
-                            <div
-                                class="custom-select-menu"
-                                role="listbox">
                             </div>
-
 
                         </div>
 
                     </div>
 
 
-
-                    <!-- PHOTO -->
+                    <!-- मोबाईल क्रमांक -->
 
                     <div class="form-group">
 
-                        <label for="photo">
-
-                            समस्येचा फोटो
-
-                            <span
-                                style="font-weight:500;color:var(--muted)">
-
-                                (ऐच्छिक)
-
-                            </span>
-
+                        <label>
+                            मोबाईल क्रमांक
+                            <span class="required">*</span>
                         </label>
 
-
-                        <div class="upload-box">
-
-
-                            <span class="upload-info">
-
-                                <i class="fa-regular fa-image"></i>
-
-                                JPG, JPEG किंवा PNG
-                                · कमाल 2 MB
-
-                            </span>
-
-
-                            <label
-                                class="file-label"
-                                for="photo">
-
-                                <i class="fa-solid fa-upload"></i>
-
-                                फाईल निवडा
-
-                            </label>
-
-
-                            <input
-                                id="photo"
-                                name="photo"
-                                type="file"
-                                accept=".jpg,.jpeg,.png,image/jpeg,image/png"
-                                hidden>
-
-
-                            <span
-                                id="fileName"
-                                class="help-text">
-                            </span>
-
-
-                        </div>
+                        <input
+                            type="tel"
+                            name="mobile"
+                            placeholder="मोबाईल क्रमांक प्रविष्ट करा"
+                            maxlength="10"
+                            required
+                        >
 
                     </div>
 
 
-
-                    <!-- ACTIONS -->
+                    <!-- BUTTONS -->
 
                     <div class="form-actions">
 
-
                         <button
                             type="submit"
-                            class="btn btn-primary">
+                            class="btn-submit"
+                        >
 
-                            <i class="fa-solid fa-paper-plane"></i>
+                            <i class="fa-solid fa-arrow-right"></i>
 
-                            तक्रार नोंदवा
+                            पुढे जा
 
                         </button>
 
 
                         <button
                             type="reset"
-                            class="btn btn-secondary">
-
-                            <i class="fa-solid fa-rotate-left"></i>
-
-                            माहिती साफ करा
-
+                            class="btn-reset"
+                        >
+                            रीसेट करा
                         </button>
 
-
                     </div>
-
 
                 </div>
 
@@ -1589,588 +1722,262 @@ select.field-control {
 
         </div>
 
-    </section>
+
+        <!-- ================================================
+             BENEFITS
+        ================================================ -->
+
+        <div class="benefits-section">
+
+            <div class="section-title">
+
+                <i class="fa-regular fa-star"></i>
+
+                मालमत्ता कर भरण्याचे फायदे
+
+            </div>
 
 
-
-    <!-- =================================================
-         BENEFITS
-    ================================================= -->
-
-    <section
-        class="section"
-        aria-labelledby="process-title">
+            <div class="benefits-grid">
 
 
-        <div class="section-head">
+                <div class="benefit-item">
 
-            <i
-                class="fa-solid fa-circle-check"
-                aria-hidden="true">
-            </i>
+                    <div class="bi-icon">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
 
-            <h3 id="process-title">
-                सेवेची वैशिष्ट्ये
-            </h3>
+                    <div>
+                        <h4>शहर विकास</h4>
+
+                        <p>
+                            आपल्या शहराच्या विकासात योगदान
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="benefit-item">
+
+                    <div class="bi-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <div>
+                        <h4>स्वच्छ शहर</h4>
+
+                        <p>
+                            स्वच्छ आणि सुंदर शहरासाठी मदत
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="benefit-item">
+
+                    <div class="bi-icon">
+                        <i class="fa-solid fa-road"></i>
+                    </div>
+
+                    <div>
+                        <h4>पायाभूत सुविधा</h4>
+
+                        <p>
+                            पायाभूत सुविधा सुधारण्यात मदत
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="benefit-item">
+
+                    <div class="bi-icon">
+                        <i class="fa-solid fa-shield"></i>
+                    </div>
+
+                    <div>
+                        <h4>दंडाची बचत</h4>
+
+                        <p>
+                            वेळेवर कर भरल्यास दंडाची बचत
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
 
-        <div class="benefits">
+        <!-- ================================================
+             CONTACT
+        ================================================ -->
 
+        <div class="contact-section">
 
-            <div class="benefit">
+            <div class="section-title">
 
-                <div class="benefit-icon">
+                <i class="fa-regular fa-circle-question"></i>
 
-                    <i class="fa-solid fa-file-circle-check"></i>
-
-                </div>
-
-                <div>
-
-                    <h4>
-                        ऑनलाइन नोंदणी
-                    </h4>
-
-                    <p>
-                        तक्रार अर्ज ऑनलाइन सादर करण्याची सुविधा.
-                    </p>
-
-                </div>
+                मदतीसाठी संपर्क करा
 
             </div>
 
+            <p>
+                कर भरताना काही अडचण असल्यास आम्हाला संपर्क साधा.
+            </p>
 
 
-            <div class="benefit">
+            <div class="contact-info">
 
-                <div class="benefit-icon">
-
-                    <i class="fa-solid fa-building-circle-check"></i>
-
-                </div>
-
-                <div>
-
-                    <h4>
-                        विभागाकडे पाठवणी
-                    </h4>
-
-                    <p>
-                        तक्रार संबंधित विभागाच्या प्रक्रियेसाठी उपलब्ध होते.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="benefit">
-
-                <div class="benefit-icon">
-
-                    <i class="fa-solid fa-shield-halved"></i>
-
-                </div>
-
-                <div>
-
-                    <h4>
-                        माहितीची काळजी
-                    </h4>
-
-                    <p>
-                        अर्जातील माहिती आवश्यक प्रक्रियेसाठी वापरा.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="benefit">
-
-                <div class="benefit-icon">
-
-                    <i class="fa-solid fa-mobile-screen-button"></i>
-
-                </div>
-
-                <div>
-
-                    <h4>
-                        मोबाईल अनुकूल
-                    </h4>
-
-                    <p>
-                        मोबाईल, टॅबलेट आणि संगणकावर वापरण्यास योग्य.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         CONTACT
-    ================================================= -->
-
-    <section
-        class="section"
-        aria-labelledby="contact-title">
-
-
-        <div class="section-head">
-
-            <i
-                class="fa-solid fa-headset"
-                aria-hidden="true">
-            </i>
-
-            <h3 id="contact-title">
-                बुलढाणा नगर परिषद - संपर्क
-            </h3>
-
-        </div>
-
-
-        <div class="contact">
-
-
-            <div class="contact-grid">
-
-
-                <div class="contact-item">
+                <span class="ci-item">
 
                     <i class="fa-solid fa-phone"></i>
 
-                    <div>
+                    07264-XXXXXX
 
-                        <strong>
-                            दूरध्वनी
-                        </strong>
-
-                        <span>
-                            07264-XXXXXX
-                        </span>
-
-                    </div>
-
-                </div>
+                </span>
 
 
-
-                <div class="contact-item">
+                <span class="ci-item">
 
                     <i class="fa-regular fa-envelope"></i>
 
-                    <div>
+                    tax@chikhlicouncil.gov.in
 
-                        <strong>
-                            ई-मेल
-                        </strong>
-
-                        <span>
-                            येथे अधिकृत ई-मेल भरा
-                        </span>
-
-                    </div>
-
-                </div>
+                </span>
 
 
+                <span class="ci-item">
 
-                <div class="contact-item">
+                    <i class="fa-regular fa-clock"></i>
 
-                    <i class="fa-solid fa-location-dot"></i>
+                    सोम-शुक्र 10:00 AM – 5:00 PM
 
-                    <div>
-
-                        <strong>
-                            कार्यालय
-                        </strong>
-
-                        <span>
-                            बुलढाणा नगर परिषद
-                        </span>
-
-                    </div>
-
-                </div>
-
+                </span>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
 
 
-</div>
+    <!-- ================================================
+         JAVASCRIPT
+    ================================================ -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            /* =========================================
+               WARD DROPDOWN
+            ========================================= */
+
+            const dropdown =
+                document.querySelector(".custom-dropdown");
+
+            const button =
+                dropdown.querySelector(".dropdown-btn");
+
+            const selectedText =
+                dropdown.querySelector(".selected-text");
+
+            const options =
+                dropdown.querySelectorAll(".dropdown-option");
 
 
+            button.addEventListener("click", function (e) {
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+                e.stopPropagation();
 
-<script>
+                dropdown.classList.toggle("active");
 
-
-/* =========================================================
-   FORM ELEMENTS
-========================================================= */
-
-const form =
-    document.getElementById("complaintForm");
-
-const fileInput =
-    document.getElementById("photo");
-
-const fileName =
-    document.getElementById("fileName");
-
-const complaintTypeSelect =
-    document.getElementById("complaintType");
+            });
 
 
-/* =========================================================
-   CUSTOM DROPDOWN
-========================================================= */
+            options.forEach(option => {
 
-const customSelects = [];
+                option.addEventListener("click", function (e) {
 
+                    e.stopPropagation();
 
-function closeAllCustomSelects() {
+                    selectedText.textContent =
+                        this.textContent.trim();
 
-    customSelects.forEach(
-        ({ wrapper, trigger }) => {
+                    options.forEach(item => {
 
-            wrapper.classList.remove("open");
+                        item.classList.remove("selected");
 
-            trigger.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+                    });
 
-        }
-    );
-}
+                    this.classList.add("selected");
 
-
-document
-    .querySelectorAll(".custom-select-wrap")
-    .forEach(wrapper => {
-
-
-        const select =
-            wrapper.querySelector(
-                ".custom-select-native"
-            );
-
-        const trigger =
-            wrapper.querySelector(
-                ".custom-select-trigger"
-            );
-
-        const valueBox =
-            wrapper.querySelector(
-                ".custom-select-value"
-            );
-
-        const menu =
-            wrapper.querySelector(
-                ".custom-select-menu"
-            );
-
-
-        /* Create options */
-
-        [...select.options].forEach(option => {
-
-
-            const item =
-                document.createElement("div");
-
-
-            item.className =
-                "custom-select-option";
-
-
-            item.setAttribute(
-                "role",
-                "option"
-            );
-
-
-            item.dataset.value =
-                option.value;
-
-
-            item.textContent =
-                option.textContent;
-
-
-            item.addEventListener(
-                "click",
-                () => {
-
-                    select.value =
-                        option.value;
-
-
-                    select.dispatchEvent(
-                        new Event(
-                            "change",
-                            {
-                                bubbles: true
-                            }
-                        )
-                    );
-
-
-                    closeAllCustomSelects();
-
-                }
-            );
-
-
-            menu.appendChild(item);
-
-        });
-
-
-        /* Update selected option */
-
-        function updateCustomSelect() {
-
-            const selected =
-                select.options[
-                    select.selectedIndex
-                ];
-
-
-            valueBox.textContent =
-                selected
-                    ? selected.textContent
-                    : "";
-
-
-            menu
-                .querySelectorAll(
-                    ".custom-select-option"
-                )
-                .forEach(item => {
-
-                    item.classList.toggle(
-                        "selected",
-                        item.dataset.value ===
-                        select.value
-                    );
+                    dropdown.classList.remove("active");
 
                 });
 
-        }
+            });
 
 
-        /* Open / close */
+            document.addEventListener("click", function () {
 
-        trigger.addEventListener(
-            "click",
-            () => {
+                dropdown.classList.remove("active");
 
-
-                const wasOpen =
-                    wrapper.classList.contains(
-                        "open"
-                    );
+            });
 
 
-                closeAllCustomSelects();
+            /* =========================================
+               KAR BHARNA → FORM
+            ========================================= */
+
+            const taxButtons =
+                document.querySelectorAll('a[href="#tax-form"]');
 
 
-                if (!wasOpen) {
+            taxButtons.forEach(button => {
 
-                    wrapper.classList.add(
-                        "open"
-                    );
+                button.addEventListener("click", function (e) {
 
+                    e.preventDefault();
 
-                    trigger.setAttribute(
-                        "aria-expanded",
-                        "true"
-                    );
+                    const form =
+                        document.getElementById("tax-form");
 
-                }
+                    form.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
 
-            }
-        );
+                    /* Automatically focus first field */
 
+                    setTimeout(function () {
 
-        select.addEventListener(
-            "change",
-            updateCustomSelect
-        );
+                        const firstInput =
+                            form.querySelector("input");
 
+                        if (firstInput) {
+                            firstInput.focus();
+                        }
 
-        updateCustomSelect();
+                    }, 600);
 
+                });
 
-        customSelects.push({
-            wrapper,
-            trigger
+            });
+
         });
 
-    });
+    </script>
 
 
-/* =========================================================
-   CLOSE DROPDOWN OUTSIDE
-========================================================= */
-
-document.addEventListener(
-    "click",
-    event => {
-
-        if (
-            !event.target.closest(
-                ".custom-select-wrap"
-            )
-        ) {
-
-            closeAllCustomSelects();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   FILE UPLOAD
-========================================================= */
-
-fileInput.addEventListener(
-    "change",
-    () => {
-
-
-        fileName.textContent = "";
-
-
-        if (!fileInput.files.length) {
-            return;
-        }
-
-
-        const file =
-            fileInput.files[0];
-
-
-        const allowed = [
-            "image/jpeg",
-            "image/png"
-        ];
-
-
-        /* File type */
-
-        if (!allowed.includes(file.type)) {
-
-            alert(
-                "कृपया JPG, JPEG किंवा PNG फाईल निवडा."
-            );
-
-
-            fileInput.value = "";
-
-            return;
-        }
-
-
-        /* File size */
-
-        if (
-            file.size >
-            2 * 1024 * 1024
-        ) {
-
-            alert(
-                "फाईलचा आकार 2 MB पेक्षा कमी असावा."
-            );
-
-
-            fileInput.value = "";
-
-            return;
-        }
-
-
-        fileName.textContent =
-            file.name;
-
-    }
-);
-
-
-/* =========================================================
-   FORM RESET
-========================================================= */
-
-form.addEventListener(
-    "reset",
-    () => {
-
-        setTimeout(
-            () => {
-
-                fileName.textContent = "";
-
-            },
-            0
-        );
-
-    }
-);
-
-
-/* =========================================================
-   FORM SUBMIT
-========================================================= */
-
-form.addEventListener(
-    "submit",
-    event => {
-
-        if (!form.checkValidity()) {
-            return;
-        }
-
-        /*
-            इथे PHP / backend endpoint जोडू शकतेस.
-
-            उदाहरण:
-
-            action="save_complaint.php"
-        */
-
-    }
-);
-
-</script>
-
-
-<script src="common.js"></script>
-
+    <script src="common.js"></script>
 
 </body>
+
 </html>
