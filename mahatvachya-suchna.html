@@ -1,0 +1,2482 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="चिखली नगर परिषद - महत्त्वाच्या सूचना व सेवा">
+
+    <title>सूचना व सेवा | चिखली नगर परिषद</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+/* =========================================================
+   ORANGE GOVERNMENT THEME
+========================================================= */
+
+:root {
+    --orange: #f26b18;
+    --orange-dark: #d9570b;
+    --orange-deep: #b94300;
+    --orange-light: #fff1e7;
+    --orange-soft: #fff8f3;
+
+    --text: #3d2b22;
+    --muted: #75665e;
+
+    --border: #ead8cc;
+
+    --bg: #f8f5f2;
+    --white: #ffffff;
+
+    --success: #18794e;
+    --danger: #b42318;
+
+    --shadow: 0 6px 20px rgba(120, 55, 20, .09);
+
+    --radius: 12px;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Noto Sans Devanagari", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.card-header {
+    position: sticky !important;
+    top: 0 !important;
+
+    width: 100% !important;
+    height: 210px !important;
+
+    margin: 0 0 27px 0 !important;
+
+    background-image: url("images/suchna.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    border: 0 !important;
+    border-bottom: 4px solid var(--orange) !important;
+
+    border-radius: 0 0 28px 28px;
+
+    overflow: hidden;
+
+    z-index: 100 !important;
+}
+
+
+/* =========================================================
+   BACK ARROW
+   ONLY ARROW — NO WHITE BACKGROUND
+========================================================= */
+
+.complaint-header {
+    position: sticky !important;
+}
+
+.header-back-btn {
+    position: absolute !important;
+
+    top: 18px !important;
+    left: 20px !important;
+
+    width: 42px !important;
+    height: 42px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: transparent !important;
+
+    color: #e5760e !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    text-decoration: none !important;
+
+    font-size: 26px !important;
+
+    box-shadow: none !important;
+
+    z-index: 9999 !important;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+.header-back-btn:hover {
+    background: transparent !important;
+
+    color: #ffe1cc !important;
+
+    transform: translateX(-4px);
+}
+
+.header-back-btn:active {
+    background: transparent !important;
+
+    transform: translateX(-2px) scale(.92);
+}
+
+.header-back-btn i {
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    box-shadow: var(--shadow);
+
+    margin: 0 10px 22px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-head {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 18px 22px;
+
+    border-bottom: 1px solid var(--border);
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff7f1 0%,
+            #ffffff 70%
+        );
+}
+
+.section-head i {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--orange-light);
+
+    color: var(--orange);
+
+    border: 1px solid #f4cbb2;
+
+    border-radius: 9px;
+
+    flex-shrink: 0;
+}
+
+.section-head h3 {
+    color: var(--orange-deep);
+
+    font-size: 20px;
+
+    font-weight: 800;
+}
+
+.section-head p {
+    margin-left: auto;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+
+    padding: 18px;
+}
+
+.service-card {
+    display: block;
+
+    padding: 18px 14px;
+
+    background: var(--orange-soft);
+
+    border: 1px solid #efd7c8;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    transition: .25s ease;
+
+    cursor: pointer;
+}
+
+.service-card:hover {
+    border-color: var(--orange);
+
+    background: #fff3e9;
+
+    box-shadow:
+        0 8px 22px rgba(242,107,24,.12);
+
+    transform: translateY(-3px);
+}
+
+.service-icon {
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--orange-light);
+
+    color: var(--orange);
+
+    border: 1px solid #f3c6a5;
+
+    border-radius: 9px;
+
+    margin-bottom: 11px;
+}
+
+.service-icon i {
+    font-size: 19px;
+}
+
+.service-card h4 {
+    color: var(--orange-deep);
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    margin-bottom: 3px;
+}
+
+.service-card p {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-box {
+    padding: 14px 18px 18px;
+}
+
+.search-inner {
+    position: relative;
+
+    width: 100%;
+}
+
+.search-inner i {
+    position: absolute;
+
+    left: 14px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--orange);
+
+    font-size: 16px;
+}
+
+.search-inner input {
+    width: 100%;
+
+    min-height: 46px;
+
+    padding: 10px 14px 10px 44px;
+
+    border: 1px solid #dcc8bb;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: var(--text);
+
+    outline: none;
+
+    transition: .2s ease;
+
+    font-size: 14px;
+}
+
+.search-inner input::placeholder {
+    color: #a4948b;
+}
+
+.search-inner input:hover {
+    border-color: #d5a98c;
+}
+
+.search-inner input:focus {
+    border-color: var(--orange);
+
+    box-shadow:
+        0 0 0 3px rgba(242,107,24,.12);
+
+    background: #fffdfb;
+}
+
+
+/* =========================================================
+   NOTICE GRID
+========================================================= */
+
+.notice-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+
+    padding: 0 18px 18px;
+}
+
+.notice-card {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition: .25s ease;
+
+    box-shadow: 0 4px 12px rgba(120,55,20,.04);
+}
+
+.notice-card:hover {
+    border-color: var(--orange);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 22px rgba(242,107,24,.10);
+}
+
+.notice-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 10px 14px;
+
+    background: var(--orange-soft);
+
+    border-bottom: 1px solid #f1e0d3;
+}
+
+.notice-type {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: var(--orange-dark);
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+.notice-type i {
+    color: var(--orange);
+
+    font-size: 13px;
+}
+
+.notice-date {
+    color: #88766a;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.notice-body {
+    padding: 14px;
+}
+
+.notice-body h4 {
+    color: #57351f;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    line-height: 1.4;
+
+    margin-bottom: 5px;
+}
+
+.notice-body p {
+    color: #70665f;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.notice-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 8px 14px;
+
+    border-top: 1px solid #eee3dc;
+
+    background: #fffaf7;
+}
+
+.notice-number {
+    color: #9a887c;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.read-more {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color: var(--orange-dark);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.read-more:hover {
+    color: #8f3900;
+}
+
+.no-result {
+    display: none;
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #81736b;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    margin: 0 18px 18px;
+}
+
+.no-result i {
+    display: block;
+
+    color: #e8a66e;
+
+    font-size: 32px;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-body {
+    padding: 22px;
+}
+
+
+/* =========================================================
+   NOTICE
+========================================================= */
+
+.notice-box {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 13px 15px;
+
+    margin-bottom: 20px;
+
+    background: #fff8f3;
+
+    border: 1px solid #efd8ca;
+
+    border-left: 4px solid var(--orange);
+
+    color: #66544b;
+
+    font-size: 13px;
+
+    border-radius: 7px;
+}
+
+.notice-box i {
+    color: var(--orange);
+
+    margin-top: 4px;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px 20px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: #5b2d18;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.required {
+    color: var(--danger);
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.field-control {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 10px 13px;
+
+    border: 1px solid #dcc8bb;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: var(--text);
+
+    outline: none;
+
+    transition: .2s ease;
+}
+
+.field-control::placeholder {
+    color: #a4948b;
+}
+
+.field-control:hover {
+    border-color: #d5a98c;
+}
+
+.field-control:focus {
+    border-color: var(--orange);
+
+    box-shadow:
+        0 0 0 3px rgba(242,107,24,.12);
+
+    background: #fffdfb;
+}
+
+textarea.field-control {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+select.field-control {
+    cursor: pointer;
+}
+
+.help-text {
+    color: #88776d;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   UPLOAD
+========================================================= */
+
+.upload-box {
+    border: 1px dashed #d5b5a2;
+
+    border-radius: 9px;
+
+    background: #fffaf7;
+
+    padding: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.upload-info {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.upload-info i {
+    color: var(--orange);
+}
+
+.file-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 8px 14px;
+
+    border: 1px solid #e3bda4;
+
+    border-radius: 7px;
+
+    background: #fff;
+
+    color: var(--orange-dark);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.file-label:hover {
+    background: var(--orange-light);
+
+    border-color: var(--orange);
+}
+
+
+/* =========================================================
+   FORM BUTTONS
+========================================================= */
+
+.form-actions {
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    gap: 10px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid var(--border);
+
+    margin-top: 2px;
+}
+
+.btn {
+    min-height: 46px;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.btn-primary {
+    border: 1px solid var(--orange);
+
+    background: var(--orange);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 4px 12px rgba(242,107,24,.16);
+}
+
+.btn-primary:hover {
+    background: var(--orange-dark);
+
+    border-color: var(--orange-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 18px rgba(242,107,24,.22);
+}
+
+.btn-secondary {
+    border: 1px solid #d7c8bf;
+
+    background: #ffffff;
+
+    color: #66564d;
+}
+
+.btn-secondary:hover {
+    background: #fff5ee;
+
+    border-color: #e3b89d;
+
+    color: var(--orange-dark);
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.benefits {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+
+    padding: 18px;
+}
+
+.benefit {
+    padding: 16px;
+
+    border: 1px solid #ead8cc;
+
+    border-radius: 10px;
+
+    background: #fffaf7;
+
+    display: flex;
+
+    gap: 12px;
+
+    align-items: flex-start;
+}
+
+.benefit-icon {
+    width: 38px;
+    height: 38px;
+
+    flex: 0 0 auto;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 8px;
+
+    background: var(--orange-light);
+
+    color: var(--orange);
+
+    border: 1px solid #f2cdb7;
+}
+
+.benefit h4 {
+    color: var(--orange-deep);
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    margin-bottom: 2px;
+}
+
+.benefit p {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    padding: 22px;
+}
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+.contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 13px;
+
+    border: 1px solid #ead8cc;
+
+    border-radius: 8px;
+
+    background: #fffaf7;
+}
+
+.contact-item i {
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 7px;
+
+    background: var(--orange-light);
+
+    color: var(--orange);
+}
+
+.contact-item strong {
+    display: block;
+
+    color: var(--orange-deep);
+
+    font-size: 12px;
+}
+
+.contact-item span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   CUSTOM DROPDOWN
+========================================================= */
+
+.custom-select-wrap {
+    position: relative;
+
+    width: 100%;
+}
+
+.custom-select-native {
+    position: absolute !important;
+
+    width: 1px !important;
+    height: 1px !important;
+
+    padding: 0 !important;
+    margin: -1px !important;
+
+    overflow: hidden !important;
+
+    clip: rect(0,0,0,0) !important;
+
+    white-space: nowrap !important;
+
+    border: 0 !important;
+}
+
+.custom-select-trigger {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 10px 44px 10px 14px;
+
+    border: 1px solid #dcc8bb;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fff8f3 100%
+    );
+
+    color: var(--text);
+
+    text-align: left;
+
+    font-family: "Noto Sans Devanagari", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    position: relative;
+
+    outline: none;
+
+    transition: .2s ease;
+}
+
+.custom-select-trigger:hover {
+    border-color: #dfa27c;
+
+    background: #fffaf7;
+}
+
+.custom-select-wrap.open .custom-select-trigger {
+    border-color: var(--orange);
+
+    box-shadow:
+        0 0 0 3px rgba(242,107,24,.12);
+
+    background: #ffffff;
+}
+
+.custom-select-arrow {
+    position: absolute;
+
+    right: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #9b684d;
+
+    font-size: 13px;
+
+    pointer-events: none;
+
+    transition: .25s ease;
+}
+
+.custom-select-wrap.open .custom-select-arrow {
+    transform:
+        translateY(-50%)
+        rotate(180deg);
+
+    color: var(--orange);
+}
+
+.custom-select-menu {
+    position: absolute;
+
+    z-index: 1000;
+
+    left: 0;
+    right: 0;
+
+    top: calc(100% + 7px);
+
+    max-height: 260px;
+
+    overflow-y: auto;
+
+    padding: 6px;
+
+    border: 1px solid #e5c8b7;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,.98);
+
+    box-shadow:
+        0 14px 35px rgba(120,55,20,.15),
+        0 3px 10px rgba(120,55,20,.08);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(-8px)
+        scale(.98);
+
+    transform-origin: top center;
+
+    transition:
+        opacity .2s ease,
+        transform .22s ease,
+        visibility .22s;
+
+    backdrop-filter: blur(8px);
+}
+
+.custom-select-wrap.open .custom-select-menu {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.custom-select-option {
+    min-height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 8px 11px;
+
+    border-radius: 7px;
+
+    color: #5b321f;
+
+    font-family: "Noto Sans Devanagari", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: .15s ease;
+}
+
+.custom-select-option:hover {
+    background: var(--orange-light);
+
+    color: var(--orange-dark);
+
+    transform: translateX(2px);
+}
+
+.custom-select-option.selected {
+    background: #ffe3d1;
+
+    color: var(--orange-dark);
+
+    font-weight: 700;
+}
+
+.custom-select-option.selected::after {
+    content: "✓";
+
+    margin-left: auto;
+
+    font-weight: 800;
+
+    color: var(--orange);
+}
+
+.custom-select-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-select-menu::-webkit-scrollbar-track {
+    background: #fff2e9;
+
+    border-radius: 10px;
+}
+
+.custom-select-menu::-webkit-scrollbar-thumb {
+    background: #eabda0;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+:focus-visible {
+    outline: 3px solid rgba(242,107,24,.25);
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   RESPONSIVE 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefits {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE 768px
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .card-header {
+        height: 165px !important;
+
+        border-radius:
+            0 0 22px 22px;
+    }
+
+    .header-back-btn {
+        top: 14px !important;
+        left: 14px !important;
+
+        width: 38px !important;
+        height: 38px !important;
+
+        font-size: 23px !important;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE 650px
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .card-header {
+        height: 145px !important;
+
+        margin-bottom: 18px !important;
+
+        border-radius:
+            0 0 18px 18px;
+    }
+
+    .header-back-btn {
+        top: 10px !important;
+        left: 10px !important;
+
+        width: 34px !important;
+        height: 34px !important;
+
+        font-size: 21px !important;
+    }
+
+    .section {
+        margin-left: 8px;
+        margin-right: 8px;
+
+        border-radius: 18px;
+    }
+
+    .section-head {
+        padding: 14px;
+    }
+
+    .section-head h3 {
+        font-size: 17px;
+    }
+
+    .section-head p {
+        display: none;
+    }
+
+    .services {
+        grid-template-columns: 1fr 1fr;
+
+        padding: 12px;
+
+        gap: 10px;
+    }
+
+    .service-card {
+        padding: 14px 11px;
+    }
+
+    .service-card h4 {
+        font-size: 13px;
+    }
+
+    .service-card p {
+        font-size: 10px;
+    }
+
+    .service-icon {
+        width: 38px;
+        height: 38px;
+
+        margin-bottom: 8px;
+    }
+
+    .notice-grid {
+        grid-template-columns: 1fr;
+
+        padding: 0 12px 14px;
+
+        gap: 10px;
+    }
+
+    .search-box {
+        padding: 12px 12px 14px;
+    }
+
+    .form-body {
+        padding: 14px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .form-actions {
+        grid-column: auto;
+
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr 1fr;
+
+        padding: 12px;
+
+        gap: 10px;
+    }
+
+    .benefit {
+        padding: 12px;
+
+        gap: 8px;
+    }
+
+    .contact {
+        padding: 14px;
+    }
+
+    .custom-select-menu {
+        max-height: 220px;
+    }
+
+    .custom-select-option {
+        font-size: 14px;
+
+        min-height: 42px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .card-header {
+        height: 132px !important;
+    }
+
+    .header-back-btn {
+        top: 9px !important;
+        left: 9px !important;
+
+        width: 32px !important;
+        height: 32px !important;
+
+        font-size: 20px !important;
+    }
+
+    .services {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .service-card {
+        min-height: 145px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .services,
+    .benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        min-height: auto;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: .01ms !important;
+    }
+}
+
+</style>
+
+
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER IMAGE
+===================================================== -->
+
+
+<div class="card-header complaint-header">
+
+    <!-- BACK BUTTON -->
+    <a href="javascript:history.back();"
+       class="header-back-btn"
+       title="मागे जा"
+       aria-label="मागे जा">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+    </a>
+
+</div>
+
+
+
+    <!-- =================================================
+         INFORMATION SERVICES
+    ================================================= -->
+
+    <section
+        class="section"
+        aria-labelledby="services-title">
+
+
+        <div class="section-head">
+
+            <i
+                class="fa-solid fa-list-check"
+                aria-hidden="true">
+            </i>
+
+            <h3 id="services-title">
+                सूचना व सेवा
+            </h3>
+
+            <p>
+                योग्य पर्याय निवडा
+            </p>
+
+        </div>
+
+
+        <div class="services">
+
+
+            <!-- SERVICE 1 -->
+
+            <a
+                href="#notice-section"
+                class="service-card"
+                data-notice="स्वच्छता सूचना">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-broom"></i>
+
+                </div>
+
+                <h4>
+                    स्वच्छता सूचना
+                </h4>
+
+                <p>
+                    स्वच्छता व कचरा व्यवस्थापन सूचना
+                </p>
+
+            </a>
+
+
+
+            <!-- SERVICE 2 -->
+
+            <a
+                href="#notice-section"
+                class="service-card"
+                data-notice="पाणीपुरवठा सूचना">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </div>
+
+                <h4>
+                    पाणीपुरवठा सूचना
+                </h4>
+
+                <p>
+                    पाणीपुरवठा वेळापत्रक व सूचना
+                </p>
+
+            </a>
+
+
+
+            <!-- SERVICE 3 -->
+
+            <a
+                href="#notice-section"
+                class="service-card"
+                data-notice="कर सूचना">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+
+                </div>
+
+                <h4>
+                    कर सूचना
+                </h4>
+
+                <p>
+                    मालमत्ता कर व अन्य कर सूचना
+                </p>
+
+            </a>
+
+
+
+            <!-- SERVICE 4 -->
+
+            <a
+                href="#notice-section"
+                class="service-card"
+                data-notice="आरोग्य सूचना">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-heart-pulse"></i>
+
+                </div>
+
+                <h4>
+                    आरोग्य सूचना
+                </h4>
+
+                <p>
+                    नागरिकांच्या आरोग्याबाबत जनजागृती
+                </p>
+
+            </a>
+
+
+
+            <!-- SERVICE 5 -->
+
+            <a
+                href="#notice-section"
+                class="service-card"
+                data-notice="बांधकाम सूचना">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-road"></i>
+
+                </div>
+
+                <h4>
+                    बांधकाम सूचना
+                </h4>
+
+                <p>
+                    रस्ता दुरुस्ती व विकास कामांच्या सूचना
+                </p>
+
+            </a>
+
+
+
+            <!-- SERVICE 6 -->
+
+            <a
+                href="#notice-section"
+                class="service-card"
+                data-notice="नागरिक सूचना">
+
+                <div class="service-icon">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <h4>
+                    नागरिक सूचना
+                </h4>
+
+                <p>
+                    नागरिक सेवा व ऑनलाइन सुविधा सूचना
+                </p>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         NOTICE SECTION
+    ================================================= -->
+
+    <section
+        class="section"
+        id="notice-section"
+        aria-labelledby="notice-title">
+
+
+        <div class="section-head">
+
+            <i
+                class="fa-solid fa-newspaper"
+                aria-hidden="true">
+            </i>
+
+            <h3 id="notice-title">
+                प्रमुख सूचना
+            </h3>
+
+            <p>
+                महत्त्वाच्या सूचना व घोषणा
+            </p>
+
+        </div>
+
+
+        <div class="form-body">
+
+            <!-- NOTICE BOX -->
+
+            <div class="notice-box">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <div>
+
+                    <strong>सूचना:</strong>
+
+                    नगर परिषदेकडून प्रसिद्ध करण्यात येणाऱ्या
+                    अधिकृत सूचना नागरिकांनी नियमितपणे तपासाव्यात.
+                    अनधिकृत माहितीवर विश्वास ठेवू नये.
+
+                </div>
+
+            </div>
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+
+                <div class="search-inner">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="noticeSearch"
+                        placeholder="सूचना शोधा..."
+                        autocomplete="off">
+
+                </div>
+
+            </div>
+
+            <!-- NOTICE GRID -->
+
+            <div class="notice-grid" id="noticeGrid">
+
+                <!-- NOTICE 1 -->
+
+                <div class="notice-card" data-title="स्वच्छता अभियान">
+
+                    <div class="notice-top">
+
+                        <span class="notice-type">
+
+                            <i class="fa-solid fa-broom"></i>
+
+                            स्वच्छता विभाग
+
+                        </span>
+
+                        <span class="notice-date">
+                            १७ ऑगस्ट २०२६
+                        </span>
+
+                    </div>
+
+                    <div class="notice-body">
+
+                        <h4>
+                            शहर स्वच्छता अभियानाबाबत सूचना
+                        </h4>
+
+                        <p>
+                            नागरिकांनी घरगुती कचरा ओला व सुका असा
+                            वेगळा करून नगर परिषदेकडील कचरा संकलन
+                            वाहनाकडे द्यावा.
+                        </p>
+
+                    </div>
+
+                    <div class="notice-footer">
+
+                        <span class="notice-number">
+                            सूचना क्र. ००१/२०२६
+                        </span>
+
+                        <span class="read-more">
+
+                            अधिक माहिती
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- NOTICE 2 -->
+
+                <div class="notice-card" data-title="पाणीपुरवठा">
+
+                    <div class="notice-top">
+
+                        <span class="notice-type">
+
+                            <i class="fa-solid fa-droplet"></i>
+
+                            पाणीपुरवठा विभाग
+
+                        </span>
+
+                        <span class="notice-date">
+                            १६ ऑगस्ट २०२६
+                        </span>
+
+                    </div>
+
+                    <div class="notice-body">
+
+                        <h4>
+                            पाणीपुरवठ्याबाबत नागरिकांना सूचना
+                        </h4>
+
+                        <p>
+                            पाणीपुरवठा वेळापत्रकात आवश्यकतेनुसार
+                            बदल होऊ शकतो. नागरिकांनी पाण्याचा
+                            काटकसरीने वापर करावा.
+                        </p>
+
+                    </div>
+
+                    <div class="notice-footer">
+
+                        <span class="notice-number">
+                            सूचना क्र. ००२/२०२६
+                        </span>
+
+                        <span class="read-more">
+
+                            अधिक माहिती
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- NOTICE 3 -->
+
+                <div class="notice-card" data-title="मालमत्ता कर">
+
+                    <div class="notice-top">
+
+                        <span class="notice-type">
+
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+
+                            कर विभाग
+
+                        </span>
+
+                        <span class="notice-date">
+                            १५ ऑगस्ट २०२६
+                        </span>
+
+                    </div>
+
+                    <div class="notice-body">
+
+                        <h4>
+                            मालमत्ता कर भरण्याबाबत सूचना
+                        </h4>
+
+                        <p>
+                            नागरिकांनी आपला मालमत्ता कर निर्धारित
+                            मुदतीमध्ये भरून नगर परिषद प्रशासनास
+                            सहकार्य करावे.
+                        </p>
+
+                    </div>
+
+                    <div class="notice-footer">
+
+                        <span class="notice-number">
+                            सूचना क्र. ००३/२०२६
+                        </span>
+
+                        <span class="read-more">
+
+                            अधिक माहिती
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- NOTICE 4 -->
+
+                <div class="notice-card" data-title="आरोग्य जनजागृती">
+
+                    <div class="notice-top">
+
+                        <span class="notice-type">
+
+                            <i class="fa-solid fa-heart-pulse"></i>
+
+                            आरोग्य विभाग
+
+                        </span>
+
+                        <span class="notice-date">
+                            १४ ऑगस्ट २०२६
+                        </span>
+
+                    </div>
+
+                    <div class="notice-body">
+
+                        <h4>
+                            नागरिकांच्या आरोग्याबाबत जनजागृती
+                        </h4>
+
+                        <p>
+                            परिसरात स्वच्छता राखावी. पिण्याचे पाणी
+                            स्वच्छ ठेवावे आणि सार्वजनिक ठिकाणी
+                            कचरा टाकू नये.
+                        </p>
+
+                    </div>
+
+                    <div class="notice-footer">
+
+                        <span class="notice-number">
+                            सूचना क्र. ००४/२०२६
+                        </span>
+
+                        <span class="read-more">
+
+                            अधिक माहिती
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- NOTICE 5 -->
+
+                <div class="notice-card" data-title="रस्ता दुरुस्ती">
+
+                    <div class="notice-top">
+
+                        <span class="notice-type">
+
+                            <i class="fa-solid fa-road"></i>
+
+                            बांधकाम विभाग
+
+                        </span>
+
+                        <span class="notice-date">
+                            १२ ऑगस्ट २०२६
+                        </span>
+
+                    </div>
+
+                    <div class="notice-body">
+
+                        <h4>
+                            रस्ता दुरुस्तीच्या कामाबाबत सूचना
+                        </h4>
+
+                        <p>
+                            शहरातील आवश्यक रस्ते दुरुस्तीची कामे
+                            सुरू असल्याने संबंधित मार्गावर नागरिकांनी
+                            काळजीपूर्वक प्रवास करावा.
+                        </p>
+
+                    </div>
+
+                    <div class="notice-footer">
+
+                        <span class="notice-number">
+                            सूचना क्र. ००५/२०२६
+                        </span>
+
+                        <span class="read-more">
+
+                            अधिक माहिती
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- NOTICE 6 -->
+
+                <div class="notice-card" data-title="ऑनलाइन सेवा">
+
+                    <div class="notice-top">
+
+                        <span class="notice-type">
+
+                            <i class="fa-solid fa-users"></i>
+
+                            नागरिक सेवा
+
+                        </span>
+
+                        <span class="notice-date">
+                            १० ऑगस्ट २०२६
+                        </span>
+
+                    </div>
+
+                    <div class="notice-body">
+
+                        <h4>
+                            ऑनलाइन नागरिक सेवा वापराबाबत
+                        </h4>
+
+                        <p>
+                            नागरिकांनी उपलब्ध ऑनलाइन सेवांचा वापर
+                            करून अर्ज, तक्रारी व आवश्यक सेवा
+                            घरबसल्या प्राप्त कराव्यात.
+                        </p>
+
+                    </div>
+
+                    <div class="notice-footer">
+
+                        <span class="notice-number">
+                            सूचना क्र. ००६/२०२६
+                        </span>
+
+                        <span class="read-more">
+
+                            अधिक माहिती
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- NO RESULT -->
+
+            <div class="no-result" id="noResult">
+
+                <i class="fa-regular fa-folder-open"></i>
+
+                <strong>
+                    सूचना उपलब्ध नाही
+                </strong>
+
+                <div>
+                    तुमच्या शोधाशी जुळणारी सूचना सापडली नाही.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         BENEFITS
+    ================================================= -->
+
+    <section
+        class="section"
+        aria-labelledby="process-title">
+
+
+        <div class="section-head">
+
+            <i
+                class="fa-solid fa-circle-check"
+                aria-hidden="true">
+            </i>
+
+            <h3 id="process-title">
+                नागरिकांसाठी महत्त्वाची माहिती
+            </h3>
+
+        </div>
+
+
+        <div class="benefits">
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+
+                    <i class="fa-solid fa-check-circle"></i>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        अधिकृत सूचना
+                    </h4>
+
+                    <p>
+                        फक्त नगर परिषदेकडून प्रसिद्ध होणाऱ्या
+                        अधिकृत सूचनाच तपासा.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        ऑनलाइन सेवा
+                    </h4>
+
+                    <p>
+                        ऑनलाइन सेवांचा वापर करताना योग्य
+                        माहिती भरावी.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+
+                    <i class="fa-solid fa-handshake"></i>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        प्रशासन सहकार्य
+                    </h4>
+
+                    <p>
+                        नागरिकांनी नगर परिषद प्रशासनास
+                        आवश्यक सहकार्य करावे.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        नियमित तपासणी
+                    </h4>
+
+                    <p>
+                        महत्त्वाच्या सूचना व अपडेटसाठी
+                        पोर्टल नियमित तपासा.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         CONTACT
+    ================================================= -->
+
+    <section
+        class="section"
+        aria-labelledby="contact-title">
+
+
+        <div class="section-head">
+
+            <i
+                class="fa-solid fa-headset"
+                aria-hidden="true">
+            </i>
+
+            <h3 id="contact-title">
+                सूचना व सेवा विभागाशी संपर्क
+            </h3>
+
+        </div>
+
+
+        <div class="contact">
+
+
+            <div class="contact-grid">
+
+
+                <div class="contact-item">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <div>
+
+                        <strong>
+                            दूरध्वनी
+                        </strong>
+
+                        <span>
+                            ०७२६४-XXXXXX
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="contact-item">
+
+                    <i class="fa-regular fa-envelope"></i>
+
+                    <div>
+
+                        <strong>
+                            ई-मेल
+                        </strong>
+
+                        <span>
+                            suchna@chikhlicouncil.gov.in
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="contact-item">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <div>
+
+                        <strong>
+                            कार्यालय
+                        </strong>
+
+                        <span>
+                            चिखली नगर परिषद
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+const searchInput =
+    document.getElementById("noticeSearch");
+
+const cards =
+    document.querySelectorAll(".notice-card");
+
+const noResult =
+    document.getElementById("noResult");
+
+
+searchInput.addEventListener(
+    "input",
+    function() {
+
+        const value =
+            this.value
+            .toLowerCase()
+            .trim();
+
+        let visible = 0;
+
+        cards.forEach(card => {
+
+            const text =
+                card.innerText
+                .toLowerCase();
+
+            if (text.includes(value)) {
+
+                card.style.display = "block";
+
+                visible++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+        if (visible === 0) {
+
+            noResult.style.display = "block";
+
+        } else {
+
+            noResult.style.display = "none";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   SERVICE CARD -> NOTICE SECTION
+========================================================= */
+
+document
+    .querySelectorAll(".service-card")
+    .forEach(card => {
+
+        card.addEventListener(
+            "click",
+            function(e) {
+
+                // smooth scroll to notice section
+                const target =
+                    document.getElementById("notice-section");
+
+                if (target) {
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+
+                // optional - focus search after scroll
+                setTimeout(
+                    () => {
+
+                        searchInput.focus();
+
+                    },
+                    600
+                );
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   READ MORE CLICK
+========================================================= */
+
+document
+    .querySelectorAll(".read-more")
+    .forEach(btn => {
+
+        btn.addEventListener(
+            "click",
+            function() {
+
+                const card =
+                    this.closest(".notice-card");
+
+                const title =
+                    card.querySelector(".notice-body h4");
+
+                if (title) {
+
+                    alert(
+                        "सूचना: " + title.textContent.trim() +
+                        "\n\nअधिक माहितीसाठी कृपया नगर परिषद कार्यालयाशी संपर्क साधावा."
+                    );
+
+                }
+
+            }
+        );
+
+    });
+
+
+</script>
+
+
+<script src="common.js"></script>
+
+
+</body>
+</html>
